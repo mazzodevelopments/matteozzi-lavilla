@@ -1,8 +1,8 @@
 'use client';
 import Link from 'next/link';
-import hero1 from '../assets/hero1.jpeg';
-import hero2 from '../assets/hero2.jpeg';
-import hero3 from '../assets/hero3.jpeg';
+import hero1 from '../assets/hero1.jpg';
+import hero2 from '../assets/hero2.jpg';
+import hero3 from '../assets/hero3.jpg';
 import { ImagesSlider } from '../components/ui/images-slider';
 import { TextGenerateEffect } from '../components/ui/text-generate-effect';
 import { motion } from 'framer-motion';
