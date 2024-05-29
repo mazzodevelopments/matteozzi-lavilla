@@ -98,7 +98,7 @@ export default function Contacto() {
 
     return (
         <section
-            id="contact"
+            id="contacto"
             className="min-h-screen pt-8 pb-16 py-4 bg-gray-50 dark:bg-gray-950 text-center"
         >
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-black dark:text-white leading-relaxed lg:leading-snug mb-8 mx-auto">
