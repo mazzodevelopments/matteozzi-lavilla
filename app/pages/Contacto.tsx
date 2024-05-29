@@ -52,7 +52,7 @@ export default function Contacto() {
         const newErrors: { [key: string]: string } = {};
         Object.entries(formData).forEach(([key, value]) => {
             if (value.trim() === '') {
-                newErrors[key] = 'Please fill out this field';
+                newErrors[key] = '*Obligatorio';
             }
         });
 
@@ -99,7 +99,7 @@ export default function Contacto() {
     return (
         <section
             id="contact"
-            className="min-h-screen pt-8 pb-16 py-4 bg-white dark:bg-gray-950 text-center"
+            className="min-h-screen pt-8 pb-16 py-4 bg-gray-50 dark:bg-gray-950 text-center"
         >
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-black dark:text-white leading-relaxed lg:leading-snug mb-8 mx-auto">
                 Contacto
@@ -156,7 +156,7 @@ export default function Contacto() {
                         <motion.button
                             onClick={handleSubmit}
                             {...buttonMotionConfig}
-                            className="relative inline-block px-8 py-2 bg-[#0070f3] rounded-md text-white font-light shadow-[0_4px_14px_0_rgb(0,118,255,25%)] hover:shadow-[0_6px_20px_rgba(0,118,255,50%)] hover:bg-[rgba(0,118,255,0.9)] transition duration-200 ease-linear"
+                            className="relative inline-block px-8 py-2 bg-[#0070f3] rounded-md text-white font-normal shadow-[0_4px_14px_0_rgb(0,118,255,25%)] hover:shadow-[0_6px_20px_rgba(0,118,255,50%)] hover:bg-[rgba(0,118,255,0.9)] transition duration-200 ease-linear"
                         >
                             Enviar
                         </motion.button>

@@ -39,7 +39,7 @@ export default function Hero() {
                     >
                         <Link
                             href="#contacto"
-                            className="inline-block mx-auto px-8 py-2 bg-[#0070f3] rounded-md text-white font-light shadow-[0_4px_14px_0_rgb(0,118,255,25%)] hover:shadow-[0_6px_20px_rgba(0,118,255,50%)] hover:bg-[rgba(0,118,255,0.9)] transition duration-200 ease-linear"
+                            className="inline-block mx-auto px-8 py-2 bg-[#0070f3] rounded-md text-white font-normal shadow-[0_4px_14px_0_rgb(0,118,255,25%)] hover:shadow-[0_6px_20px_rgba(0,118,255,50%)] hover:bg-[rgba(0,118,255,0.9)] transition duration-200 ease-linear"
                         >
                             Contáctanos
                         </Link>
