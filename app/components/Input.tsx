@@ -24,7 +24,7 @@ export default function Input({
     const inputStyles =
         'shadow-inner dark:shadow-gray-850 appearance-none bg-gray-200 dark:bg-gray-900 dark:text-white rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-gray-300 dark:focus:bg-gray-600';
     const textareaStyles =
-        'shadow-inner dark:shadow-gray-850 appearance-none bg-gray-200 dark:bg-gray-900 dark:text-white rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-gray-300 dark:focus:bg-gray-600';
+        'shadow-inner dark:shadow-gray-850 appearance-none bg-gray-200 dark:bg-gray-900 dark:text-white rounded w-full pt-3 pb-20 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-gray-300 dark:focus:bg-gray-600';
     const labelStyles =
         'block text-gray-700 dark:text-white text-sm font-bold mb-2 text-left';
     const inputHoverStyles =
