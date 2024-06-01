@@ -1,6 +1,6 @@
 'use client';
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
 import hero1 from '../assets/hero1.jpg';
@@ -34,20 +34,8 @@ const items: NosotrosItem[] = [
     }
 ];
 
-const About: React.FC = () => {
+export default function About() {
     const [selectedItem, setSelectedItem] = useState<NosotrosItem | null>(null);
-
-    useEffect(() => {
-        if (selectedItem) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
-
-        return () => {
-            document.body.style.overflow = 'auto';
-        };
-    }, [selectedItem]);
 
     const openModal = (item: NosotrosItem) => {
         setSelectedItem(item);
@@ -65,9 +53,8 @@ const About: React.FC = () => {
                 </h1>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {items.map((item, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            whileHover={{ scale: 1.05 }}
                             className="bg-white rounded-xl shadow-md p-5 flex flex-col items-start justify-start cursor-pointer"
                             onClick={() => openModal(item)}
                         >
@@ -88,53 +75,54 @@ const About: React.FC = () => {
                                     {item.description}
                                 </p>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>
 
-            {selectedItem && (
-                <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center">
-                    <div
-                        className="bg-black bg-opacity-80 absolute top-0 left-0 w-full h-full flex items-center justify-center"
-                        onClick={closeModal} // Close modal on click outside
+            <AnimatePresence>
+                {selectedItem && (
+                    <motion.div
+                        className="fixed top-0 left-0 w-full h-full flex items-center justify-center"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
                     >
-                        <motion.div
-                            initial={{ width: 0 }}
-                            animate={{ width: '90%' }}
-                            className="bg-white rounded-lg overflow-hidden"
-                            style={{ maxWidth: '600px' }}
-                            transition={{ duration: 0.5 }} // Slow down animation duration
-                            onClick={(e) => e.stopPropagation()} // Prevent closing modal when clicking inside modal
+                        <div
+                            className="bg-black bg-opacity-80 absolute top-0 left-0 w-full h-full flex items-center justify-center"
+                            onClick={closeModal}
                         >
-                            <div className="relative w-full h-80">
-                                <Image
-                                    src={selectedItem.photo}
-                                    alt={selectedItem.title}
-                                    layout="fill"
-                                    objectFit="cover"
-                                />
-                            </div>
-                            <div className="p-4">
-                                <h2 className="text-xl font-semibold mb-2">
-                                    {selectedItem.title}
-                                </h2>
-                                <p className="text-gray-700">
-                                    {selectedItem.description}
-                                </p>
-                                <button
-                                    onClick={closeModal}
-                                    className="mt-4 bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-md"
-                                >
-                                    Close
-                                </button>
-                            </div>
-                        </motion.div>
-                    </div>
-                </div>
-            )}
+                            <motion.div
+                                className="bg-white rounded-lg overflow-hidden"
+                                style={{ maxWidth: '600px' }}
+                            >
+                                <div className="relative w-full h-80">
+                                    <Image
+                                        src={selectedItem.photo}
+                                        alt={selectedItem.title}
+                                        layout="fill"
+                                        objectFit="cover"
+                                    />
+                                </div>
+                                <div className="p-4">
+                                    <h2 className="text-xl font-semibold mb-2">
+                                        {selectedItem.title}
+                                    </h2>
+                                    <p className="text-gray-700">
+                                        {selectedItem.description}
+                                    </p>
+                                    <button
+                                        onClick={closeModal}
+                                        className="mt-4 bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-md"
+                                    >
+                                        Cerrar
+                                    </button>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
-};
-
-export default About;
+}
