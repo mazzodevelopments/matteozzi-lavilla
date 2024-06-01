@@ -81,7 +81,7 @@ export default function Contacto() {
     return (
         <section
             id="contacto"
-            className="min-h-screen pt-16 pb-16 bg-gray-100 dark:bg-gray-800"
+            className="min-h-screen pt-16 pb-16 bg-gray-50 dark:bg-gray-800"
         >
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-black dark:text-white mb-12">
                 Contacto
