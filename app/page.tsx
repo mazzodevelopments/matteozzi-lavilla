@@ -1,4 +1,5 @@
 import Divider from './components/Divider';
+import About from './pages/About';
 import Contacto from './pages/Contacto';
 import Hero from './pages/Hero';
 import Info from './pages/Info';
@@ -11,6 +12,8 @@ export default function Home() {
             <Navbar />
             <Hero />
             <Info />
+            <Divider />
+            <About />
             <Divider />
             <Servicios />
             <Divider />
