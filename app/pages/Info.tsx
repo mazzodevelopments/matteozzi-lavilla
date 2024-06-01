@@ -35,6 +35,7 @@ export default function Info() {
             key={index}
             className="bg-white rounded-lg p-4 text-center m-2 flex flex-col items-center"
             whileHover={{ scale: 1.1, y: -5, color: '#3B82F6' }}
+            style={{ color: '#1E293B' }}
         >
             <h2 className="text-sm sm:text-base font-bold mb-4">
                 {item.title}
