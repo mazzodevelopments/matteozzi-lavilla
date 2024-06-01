@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
@@ -39,11 +39,19 @@ export default function About() {
 
     const openModal = (item: NosotrosItem) => {
         setSelectedItem(item);
+        document.body.style.overflow = 'hidden';
     };
 
     const closeModal = () => {
         setSelectedItem(null);
+        document.body.style.overflow = 'auto';
     };
+
+    useEffect(() => {
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, []);
 
     return (
         <section id="nosotros" className="min-h-screen bg-gray-50">
