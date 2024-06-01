@@ -46,16 +46,17 @@ export default function About() {
     };
 
     return (
-        <section className="min-h-screen py-10 px-5 bg-gray-50">
-            <div className="max-w-7xl mx-auto">
-                <h1 className="text-4xl font-bold text-center mb-10">
-                    Nosotros
+        <section className="min-h-screen bg-gray-50">
+            <div className="max-w-6xl mx-auto pt-16 pb-16 px-5">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-black dark:text-white mb-12">
+                    Contacto
                 </h1>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {items.map((item, index) => (
-                        <div
+                        <motion.div
                             key={index}
-                            className="bg-white rounded-xl shadow-md p-5 flex flex-col items-start justify-start cursor-pointer"
+                            whileHover={{ scale: 1.05 }}
+                            className="bg-white rounded-xl shadow-md p-4 flex flex-col items-start justify-start cursor-pointer"
                             onClick={() => openModal(item)}
                         >
                             <div className="w-full h-48 relative rounded-md overflow-hidden">
@@ -71,11 +72,11 @@ export default function About() {
                                 <h2 className="text-2xl font-semibold mt-4 mb-2">
                                     {item.title}
                                 </h2>
-                                <p className="text-gray-700 text-sm">
+                                <p className="text-gray-700 text-sm line-clamp-8">
                                     {item.description}
                                 </p>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
