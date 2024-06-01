@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -18,7 +18,7 @@ const items: NosotrosItem[] = [
         title: 'Quienes Somos?',
         description:
             'Somos una empresa integral en el ámbito del comercio internacional, ofreciendo servicios de consultoría, despacho de aduanas y transporte aduanero. Contamos con una estructura completa y ágil, personal experimentado, tecnología moderna y profundo conocimiento de las relaciones económicas internacionales. Somos un eslabón esencial en la economía moderna, proporcionando una colaboración indispensable para la industria y el comercio.',
-        photo: hero1.src // Ruta relativa a la carpeta "public"
+        photo: hero1.src
     },
     {
         title: 'Nuestra Estructura',
@@ -35,6 +35,28 @@ const items: NosotrosItem[] = [
 ];
 
 const About: React.FC = () => {
+    const [selectedItem, setSelectedItem] = useState<NosotrosItem | null>(null);
+
+    useEffect(() => {
+        if (selectedItem) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, [selectedItem]);
+
+    const openModal = (item: NosotrosItem) => {
+        setSelectedItem(item);
+    };
+
+    const closeModal = () => {
+        setSelectedItem(null);
+    };
+
     return (
         <section className="min-h-screen py-10 px-5 bg-gray-50">
             <div className="max-w-7xl mx-auto">
@@ -47,6 +69,7 @@ const About: React.FC = () => {
                             key={index}
                             whileHover={{ scale: 1.05 }}
                             className="bg-white rounded-xl shadow-md p-5 flex flex-col items-start justify-start cursor-pointer"
+                            onClick={() => openModal(item)}
                         >
                             <div className="w-full h-48 relative rounded-md overflow-hidden">
                                 <Image
@@ -69,6 +92,47 @@ const About: React.FC = () => {
                     ))}
                 </div>
             </div>
+
+            {selectedItem && (
+                <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center">
+                    <div
+                        className="bg-black bg-opacity-80 absolute top-0 left-0 w-full h-full flex items-center justify-center"
+                        onClick={closeModal} // Close modal on click outside
+                    >
+                        <motion.div
+                            initial={{ width: 0 }}
+                            animate={{ width: '90%' }}
+                            className="bg-white rounded-lg overflow-hidden"
+                            style={{ maxWidth: '600px' }}
+                            transition={{ duration: 0.5 }} // Slow down animation duration
+                            onClick={(e) => e.stopPropagation()} // Prevent closing modal when clicking inside modal
+                        >
+                            <div className="relative w-full h-80">
+                                <Image
+                                    src={selectedItem.photo}
+                                    alt={selectedItem.title}
+                                    layout="fill"
+                                    objectFit="cover"
+                                />
+                            </div>
+                            <div className="p-4">
+                                <h2 className="text-xl font-semibold mb-2">
+                                    {selectedItem.title}
+                                </h2>
+                                <p className="text-gray-700">
+                                    {selectedItem.description}
+                                </p>
+                                <button
+                                    onClick={closeModal}
+                                    className="mt-4 bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-md"
+                                >
+                                    Close
+                                </button>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            )}
         </section>
     );
 };
