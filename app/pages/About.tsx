@@ -72,7 +72,7 @@ export default function About() {
                                 <h2 className="text-2xl font-semibold mt-4 mb-2">
                                     {item.title}
                                 </h2>
-                                <p className="text-gray-700 text-sm line-clamp-8">
+                                <p className="text-gray-700 text-sm line-clamp-9">
                                     {item.description}
                                 </p>
                             </div>
