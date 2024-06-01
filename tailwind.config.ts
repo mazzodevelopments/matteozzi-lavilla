@@ -18,6 +18,7 @@ const config: Config = {
                     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
             },
             lineClamp: {
+                7: '7',
                 9: '9'
             }
         }

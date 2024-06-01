@@ -80,7 +80,7 @@ export default function About() {
                                 <h2 className="text-2xl font-semibold mt-4 mb-2">
                                     {item.title}
                                 </h2>
-                                <p className="text-gray-700 text-sm line-clamp-9">
+                                <p className="text-gray-700 text-sm line-clamp-3 md:line-clamp-7 lg:line-clamp-9">
                                     {item.description}
                                 </p>
                             </div>
@@ -103,14 +103,14 @@ export default function About() {
                         >
                             <motion.div
                                 className="bg-white rounded-lg overflow-hidden"
-                                style={{ maxWidth: '600px' }}
+                                style={{ maxWidth: '90%', maxHeight: '90%' }}
                             >
                                 <div className="relative w-full h-80">
                                     <Image
                                         src={selectedItem.photo}
                                         alt={selectedItem.title}
                                         layout="fill"
-                                        objectFit="cover"
+                                        objectFit="contain"
                                     />
                                 </div>
                                 <div className="p-4">
