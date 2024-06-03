@@ -37,7 +37,7 @@ export default function Info() {
             whileHover={{ scale: 1.1, y: -5, color: '#3B82F6' }}
             style={{ color: '#1E293B' }}
         >
-            <h2 className="text-sm sm:text-base font-bold mb-4">
+            <h2 className="text-sm sm:text-base font-semibold mb-4">
                 {item.title}
             </h2>
             <div className="text-6xl sm:text-9xl">{item.icon}</div>
