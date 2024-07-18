@@ -36,11 +36,11 @@ export default function Navbar({ navBarItems }: NavBarProps) {
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 bg-white dark:bg-black shadow-sm px-2 py-1.5 border-b border-gray-200 dark:border-gray-800 transition-transform duration-300 ${
+            className={`fixed top-0 left-0 right-0 z-50 bg-white dark:bg-black shadow-sm px-2 py-1.5 dark:border-gray-800 transition-transform duration-300 ${
                 showNavbar
                     ? 'transform translate-y-0'
-                    : 'transform -translate-y-full'
-            } h-[60px]`} // Ajuste de altura a 60px
+                    : 'transform -translate-y-full border-b border-gray-200'
+            } h-[60px]`}
         >
             <div className="flex justify-between items-center h-full">
                 <div className="ml-4 flex items-center space-x-4">
