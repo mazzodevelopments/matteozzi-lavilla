@@ -6,10 +6,29 @@ import Info from './pages/Info';
 import Navbar from './pages/Navbar';
 import Servicios from './pages/Servicios';
 
+const navItems = [
+    {
+        name: 'Inicio',
+        link: 'home'
+    },
+    {
+        name: 'Nosotros',
+        link: 'nosotros'
+    },
+    {
+        name: 'Servicios',
+        link: 'servicios'
+    },
+    {
+        name: 'Contacto',
+        link: 'contacto'
+    }
+];
+
 export default function Home() {
     return (
         <div>
-            <Navbar />
+            <Navbar navBarItems={navItems} />
             <Hero />
             <Info />
             <Divider />
