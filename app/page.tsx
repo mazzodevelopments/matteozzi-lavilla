@@ -1,6 +1,7 @@
 import Divider from './components/Divider';
 import About from './pages/About';
 import Contacto from './pages/Contacto';
+import Footer from './pages/Footer';
 import Hero from './pages/Hero';
 import Info from './pages/Info';
 import Navbar from './pages/Navbar';
@@ -25,6 +26,10 @@ const navItems = [
     }
 ];
 
+const footerContent = {
+    text: 'Powered by © Mazzo Developments - 2024'
+};
+
 export default function Home() {
     return (
         <div>
@@ -37,6 +42,8 @@ export default function Home() {
             <Servicios />
             <Divider />
             <Contacto />
+            <Divider />
+            <Footer content={footerContent} />
         </div>
     );
 }
