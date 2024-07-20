@@ -1,6 +1,13 @@
 'use client';
 import React from 'react';
-import { GiTowTruck, GiTransportationRings } from 'react-icons/gi';
+import {
+    GiCommercialAirplane,
+    GiPlanePilot,
+    GiTowTruck,
+    GiTransportationRings,
+    GiTruck,
+    GiWorld
+} from 'react-icons/gi';
 import { motion } from 'framer-motion';
 
 interface Servicio {
@@ -15,25 +22,19 @@ export default function Servicios() {
             title: 'Despachante de Aduana',
             description:
                 'Ofrecemos servicios en despachos de importación, permisos de embarque, importaciones y exportaciones temporales, actividades bancarias, obtención de regímenes especiales, gestiones ante organismos oficiales, permisos de embarque para exportación, y asesoramiento en el área bancaria.',
-            icon: <GiTowTruck />
+            icon: <GiCommercialAirplane />
         },
         {
             title: 'Agentes de Transporte Aduanero',
             description:
-                'Ofrecemos diversos servicios como Agente de Transporte Aduanero, tales como trasbordos, seguros aduaneros, tránsitos terrestres e internacionales, contratación de fletes, coordinación de embarques, atención de vuelos internacionales de carga y pasajeros, servicios en áreas aduaneras especiales, logística internacional y estiba.',
-            icon: <GiTransportationRings />
+                'Ofrecemos servicios de Agente de Transporte Aduanero: trasbordos, seguros y fletes nacionales e internacionales, tránsitos terrestres y aéreos, reembarcos, permisos de transporte, y coordinación de embarques. También brindamos atención personalizada, confección de documentos de carga, gestión de vuelos internacionales en el Aeropuerto de S.C. de Bariloche, logística internacional multimodal y servicios de estiba.',
+            icon: <GiTruck />
         },
         {
-            title: 'Agentes de Transporte Aduanero',
+            title: 'Consultoría en Comercio Internacional',
             description:
-                'Ofrecemos diversos servicios como Agente de Transporte Aduanero, tales como trasbordos, seguros aduaneros, tránsitos terrestres e internacionales, contratación de fletes, coordinación de embarques, atención de vuelos internacionales de carga y pasajeros, servicios en áreas aduaneras especiales, logística internacional y estiba.',
-            icon: <GiTransportationRings />
-        },
-        {
-            title: 'Agentes de Transporte Aduanero',
-            description:
-                'Ofrecemos diversos servicios como Agente de Transporte Aduanero, tales como trasbordos, seguros aduaneros, tránsitos terrestres e internacionales, contratación de fletes, coordinación de embarques, atención de vuelos internacionales de carga y pasajeros, servicios en áreas aduaneras especiales, logística internacional y estiba.',
-            icon: <GiTransportationRings />
+                'Ofrecemos asesoría integral en comercio internacional, incluyendo análisis de costos, documentación, medios de pago, y asesoría legal aduanera. También gestionamos inscripciones para importadores y exportadores, y brindamos apoyo en regímenes promocionales y clasificaciones arancelarias.',
+            icon: <GiWorld />
         }
     ];
 
