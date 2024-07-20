@@ -1,6 +1,6 @@
 import { GoCodeOfConduct, GoDatabase, GoGear, GoPeople } from 'react-icons/go';
 import Divider from './components/Divider';
-import About from './pages/About';
+import Nosotros from './pages/Nosotros';
 import Contacto from './pages/Contacto';
 import Footer from './pages/Footer';
 import Hero from './pages/Hero';
@@ -63,7 +63,7 @@ export default function Home() {
             <Hero />
             <Info content={infoContent} />
             <Divider />
-            <About />
+            <Nosotros />
             <Divider />
             <Staff />
             <Divider />

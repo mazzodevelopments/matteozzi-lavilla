@@ -54,36 +54,42 @@ export default function About() {
     }, []);
 
     return (
-        <section id="nosotros" className="min-h-screen bg-gray-50">
-            <div className="max-w-6xl mx-auto pt-16 pb-16 px-5">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-black mb-12">
+        <section id="nosotros" className="min-h-screen bg-gray-100">
+            <div className="max-w-6xl mx-auto pt-16 pb-16 px-6 text-center">
+                <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-black dark:text-white leading-relaxed lg:leading-snug mb-8 mx-auto">
                     Nosotros
                 </h1>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                     {items.map((item, index) => (
                         <motion.div
                             key={index}
                             whileHover={{ scale: 1.05 }}
-                            className="bg-white rounded-xl shadow-md p-4 flex flex-col items-start justify-start cursor-pointer"
+                            className="bg-white rounded-2xl shadow-lg flex flex-col"
                             onClick={() => openModal(item)}
                         >
-                            <div className="w-full h-48 relative rounded-md overflow-hidden">
+                            <div className="w-full h-56 relative rounded-t-2xl overflow-hidden">
                                 <Image
                                     src={item.photo}
                                     alt={item.title}
                                     layout="fill"
                                     objectFit="cover"
-                                    className="rounded-md"
+                                    className="rounded-t-2xl"
                                 />
                             </div>
-                            <div className="text-left mt-3">
-                                <h2 className="text-2xl font-semibold mt-4 mb-2">
+                            <div className="p-6 flex-1">
+                                <h2 className="text-2xl font-semibold mb-3 text-gray-800">
                                     {item.title}
                                 </h2>
-                                <p className="text-gray-700 text-sm line-clamp-3 md:line-clamp-7 lg:line-clamp-9">
+                                <p className="text-gray-600 text-sm line-clamp-9">
                                     {item.description}
                                 </p>
                             </div>
+                            <button
+                                onClick={() => openModal(item)}
+                                className="bg-blue-600 text-white py-3 rounded-b-2xl w-full hover:bg-blue-700 transition-colors duration-300"
+                            >
+                                Conocer más
+                            </button>
                         </motion.div>
                     ))}
                 </div>
@@ -92,37 +98,41 @@ export default function About() {
             <AnimatePresence>
                 {selectedItem && (
                     <motion.div
-                        className="fixed top-0 left-0 w-full h-full flex items-center justify-center"
+                        className="fixed inset-0 flex items-center justify-center z-50"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                     >
                         <div
-                            className="bg-black bg-opacity-80 absolute top-0 left-0 w-full h-full flex items-center justify-center"
+                            className="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex items-center justify-center"
                             onClick={closeModal}
                         >
                             <motion.div
-                                className="bg-white rounded-lg overflow-hidden"
-                                style={{ maxWidth: '90%', maxHeight: '90%' }}
+                                className="bg-white rounded-2xl overflow-hidden shadow-xl max-w-5xl max-h-[90vh] w-full"
+                                initial={{ y: -50, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                exit={{ y: 50, opacity: 0 }}
+                                transition={{ duration: 0.3 }}
                             >
-                                <div className="relative w-full h-80">
+                                <div className="relative w-full h-96">
                                     <Image
                                         src={selectedItem.photo}
                                         alt={selectedItem.title}
                                         layout="fill"
-                                        objectFit="contain"
+                                        objectFit="cover"
+                                        className="transition-transform duration-300 ease-in-out"
                                     />
                                 </div>
-                                <div className="p-4">
-                                    <h2 className="text-xl font-semibold mb-2">
+                                <div className="p-6">
+                                    <h2 className="text-3xl font-bold mb-4 text-gray-900">
                                         {selectedItem.title}
                                     </h2>
-                                    <p className="text-gray-700">
+                                    <p className="text-gray-700 mb-4">
                                         {selectedItem.description}
                                     </p>
                                     <button
                                         onClick={closeModal}
-                                        className="mt-4 bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-md"
+                                        className="bg-blue-600 text-white hover:bg-blue-700 px-6 py-3 rounded-lg transition-colors duration-300"
                                     >
                                         Cerrar
                                     </button>
