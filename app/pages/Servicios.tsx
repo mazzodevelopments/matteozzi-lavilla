@@ -52,7 +52,7 @@ export default function Servicios() {
                     {items.map((item, index) => (
                         <motion.div
                             key={index}
-                            className="bg-white p-6 rounded-xl shadow-md cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg border border-gray-100"
+                            className="bg-white p-6 rounded-2xl shadow-md cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg border border-gray-100"
                             whileHover={{ scale: 1.05 }}
                         >
                             <div className="flex items-center mb-2 text-3xl text-blue-500">
