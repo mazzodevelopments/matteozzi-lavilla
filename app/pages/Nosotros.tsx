@@ -13,28 +13,11 @@ interface NosotrosItem {
     photo: string;
 }
 
-const items: NosotrosItem[] = [
-    {
-        title: 'Quienes Somos?',
-        description:
-            'Somos una empresa integral en el ámbito del comercio internacional, ofreciendo servicios de consultoría, despacho de aduanas y transporte aduanero. Contamos con una estructura completa y ágil, personal experimentado, tecnología moderna y profundo conocimiento de las relaciones económicas internacionales. Somos un eslabón esencial en la economía moderna, proporcionando una colaboración indispensable para la industria y el comercio.',
-        photo: hero1.src
-    },
-    {
-        title: 'Nuestra Estructura',
-        description:
-            'Ofrecemos una ubicación privilegiada en el corazón de San Carlos de Bariloche para nuestra oficina matriz. Contamos con una amplia red de servicios nacionales e internacionales y colaboramos con embarcadores para garantizar una cobertura completa. Nuestro sistema de información se actualiza constantemente, utilizando sistemas informáticos aduaneros y bases de datos de legislación. Contamos con un equipo de profesionales altamente capacitados en comercio exterior, listos para atender personalmente y ayudar a optimizar costos y ahorrar tiempo.',
-        photo: hero2.src
-    },
-    {
-        title: 'Soporte Informático',
-        description:
-            'Nos esforzamos por brindar servicios de excelencia en comercio internacional, integrados con sistemas informáticos clave. Utilizamos herramientas modernas como el Sistema Informático María, TARIFAR, SINTIA - ALPHA 2000 y WORKOUT. Además, tenemos conectividad permanente a Internet de banda ancha para cumplir eficientemente con los requerimientos actuales.',
-        photo: hero3.src
-    }
-];
+interface NosotrosProps {
+    content: NosotrosItem[];
+}
 
-export default function About() {
+export default function About({ content }: NosotrosProps) {
     const [selectedItem, setSelectedItem] = useState<NosotrosItem | null>(null);
 
     const openModal = (item: NosotrosItem) => {
@@ -60,7 +43,7 @@ export default function About() {
                     Nosotros
                 </h1>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                    {items.map((item, index) => (
+                    {content.map((item, index) => (
                         <motion.div
                             key={index}
                             whileHover={{ scale: 1.05 }}

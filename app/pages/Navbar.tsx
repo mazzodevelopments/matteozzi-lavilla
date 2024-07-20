@@ -65,7 +65,7 @@ export default function Navbar({ navBarItems }: NavBarProps) {
                     <div className="hidden md:flex items-center space-x-4">
                         {navBarItems.map((item) => (
                             <ScrollLink
-                                className="text-sm font-semibold text-black dark:text-white hover:text-gray-500 py-4 px-2 cursor-pointer"
+                                className="text-sm font-semibold text-black dark:text-white hover:text-blue-600 py-4 px-2 cursor-pointer"
                                 key={item.name}
                                 to={item.link}
                                 smooth={true}

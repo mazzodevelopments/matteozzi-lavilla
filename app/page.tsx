@@ -1,4 +1,3 @@
-import { GoCodeOfConduct, GoDatabase, GoGear, GoPeople } from 'react-icons/go';
 import Divider from './components/Divider';
 import Nosotros from './pages/Nosotros';
 import Contacto from './pages/Contacto';
@@ -8,6 +7,12 @@ import Info from './pages/Info';
 import Navbar from './pages/Navbar';
 import Servicios from './pages/Servicios';
 import Staff from './pages/Staff';
+// INFO
+import { GoCodeOfConduct, GoDatabase, GoGear, GoPeople } from 'react-icons/go';
+// NOSOTROS
+import hero1 from './assets/hero1.jpg';
+import hero2 from './assets/hero2.jpg';
+import hero3 from './assets/hero3.jpg';
 
 const navItems = [
     {
@@ -52,6 +57,27 @@ const infoContent = {
         'Usted puede contar con Matteozzi-Lavilla como colaborador de sus operaciones de Comercio Internacional. Le brindamos:'
 };
 
+const nosotrosContent = [
+    {
+        title: 'Quienes Somos?',
+        description:
+            'Somos una empresa integral en el ámbito del comercio internacional, ofreciendo servicios de consultoría, despacho de aduanas y transporte aduanero. Contamos con una estructura completa y ágil, personal experimentado, tecnología moderna y profundo conocimiento de las relaciones económicas internacionales. Somos un eslabón esencial en la economía moderna, proporcionando una colaboración indispensable para la industria y el comercio.',
+        photo: hero1.src
+    },
+    {
+        title: 'Nuestra Estructura',
+        description:
+            'Ofrecemos una ubicación privilegiada en el corazón de San Carlos de Bariloche para nuestra oficina matriz. Contamos con una amplia red de servicios nacionales e internacionales y colaboramos con embarcadores para garantizar una cobertura completa. Nuestro sistema de información se actualiza constantemente, utilizando sistemas informáticos aduaneros y bases de datos de legislación. Contamos con un equipo de profesionales altamente capacitados en comercio exterior, listos para atender personalmente y ayudar a optimizar costos y ahorrar tiempo.',
+        photo: hero2.src
+    },
+    {
+        title: 'Soporte Informático',
+        description:
+            'Nos esforzamos por brindar servicios de excelencia en comercio internacional, integrados con sistemas informáticos clave. Utilizamos herramientas modernas como el Sistema Informático María, TARIFAR, SINTIA - ALPHA 2000 y WORKOUT. Además, tenemos conectividad permanente a Internet de banda ancha para cumplir eficientemente con los requerimientos actuales.',
+        photo: hero3.src
+    }
+];
+
 const footerContent = {
     text: 'Powered by © Mazzo Developments - 2024'
 };
@@ -63,7 +89,7 @@ export default function Home() {
             <Hero />
             <Info content={infoContent} />
             <Divider />
-            <Nosotros />
+            <Nosotros content={nosotrosContent} />
             <Divider />
             <Staff />
             <Divider />
