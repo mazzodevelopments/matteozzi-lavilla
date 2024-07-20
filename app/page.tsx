@@ -13,6 +13,8 @@ import { GoCodeOfConduct, GoDatabase, GoGear, GoPeople } from 'react-icons/go';
 import hero1 from './assets/hero1.jpg';
 import hero2 from './assets/hero2.jpg';
 import hero3 from './assets/hero3.jpg';
+// STAFF
+import emiliano from './assets/emiliano.jpg';
 
 const navItems = [
     {
@@ -78,6 +80,34 @@ const nosotrosContent = [
     }
 ];
 
+const staffContent = [
+    {
+        rol: 'CEO',
+        nombreCompleto: 'Emiliano Matteozzi',
+        foto: emiliano.src
+    },
+    {
+        rol: 'CEO',
+        nombreCompleto: 'Emiliano Matteozzi',
+        foto: emiliano.src
+    },
+    {
+        rol: 'CEO',
+        nombreCompleto: 'Emiliano Matteozzi',
+        foto: emiliano.src
+    },
+    {
+        rol: 'CEO',
+        nombreCompleto: 'Emiliano Matteozzi',
+        foto: emiliano.src
+    },
+    {
+        rol: 'CEO',
+        nombreCompleto: 'Emiliano Matteozzi',
+        foto: emiliano.src
+    }
+];
+
 const footerContent = {
     text: 'Powered by © Mazzo Developments - 2024'
 };
@@ -91,7 +121,7 @@ export default function Home() {
             <Divider />
             <Nosotros content={nosotrosContent} />
             <Divider />
-            <Staff />
+            <Staff content={staffContent} />
             <Divider />
             <Servicios />
             <Divider />

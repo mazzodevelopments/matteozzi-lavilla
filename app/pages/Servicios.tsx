@@ -41,7 +41,7 @@ export default function Servicios() {
     return (
         <section
             id="servicios"
-            className="flex justify-center items-center min-h-screen text-center"
+            className="flex justify-center items-center min-h-screen text-center bg-gray-50"
         >
             <div className="w-full max-w-6xl p-8">
                 <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-black dark:text-white leading-relaxed lg:leading-snug mb-8 mx-auto">
