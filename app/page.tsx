@@ -1,3 +1,4 @@
+import { GoCodeOfConduct, GoDatabase, GoGear, GoPeople } from 'react-icons/go';
 import Divider from './components/Divider';
 import About from './pages/About';
 import Contacto from './pages/Contacto';
@@ -27,6 +28,30 @@ const navItems = [
     }
 ];
 
+const infoContent = {
+    items: [
+        {
+            title: 'Profesionalidad',
+            icon: <GoCodeOfConduct />
+        },
+        {
+            title: 'Experiencia',
+            icon: <GoDatabase />
+        },
+        {
+            title: 'Confianza + Fidelidad',
+            icon: <GoPeople />
+        },
+        {
+            title: 'Estructura',
+            icon: <GoGear />
+        }
+    ],
+    phrase: '¿Está interesado en importar-exportar o desea tener una mejor alternativa en su operativa de comercio exterior?',
+    paragraph:
+        'Usted puede contar con Matteozzi-Lavilla como colaborador de sus operaciones de Comercio Internacional. Le brindamos:'
+};
+
 const footerContent = {
     text: 'Powered by © Mazzo Developments - 2024'
 };
@@ -36,7 +61,7 @@ export default function Home() {
         <div>
             <Navbar navBarItems={navItems} />
             <Hero />
-            <Info />
+            <Info content={infoContent} />
             <Divider />
             <About />
             <Divider />

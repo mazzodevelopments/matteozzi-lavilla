@@ -3,32 +3,19 @@ import React from 'react';
 import { GoCodeOfConduct, GoDatabase, GoPeople, GoGear } from 'react-icons/go';
 import { motion } from 'framer-motion';
 
-export default function Info() {
-    const infoContent = {
-        items: [
-            {
-                title: 'Profesionalidad',
-                icon: <GoCodeOfConduct />
-            },
-            {
-                title: 'Experiencia',
-                icon: <GoDatabase />
-            },
-            {
-                title: 'Confianza + Fidelidad',
-                icon: <GoPeople />
-            },
-            {
-                title: 'Estructura',
-                icon: <GoGear />
-            }
-        ],
-        phrase: '¿Está interesado en importar-exportar o desea tener una mejor alternativa en su operativa de comercio exterior?',
-        paragraph:
-            'Usted puede contar con Matteozzi-Lavilla como colaborador de sus operaciones de Comercio Internacional. Le brindamos:'
+interface InfoProps {
+    content: {
+        items: {
+            title: string;
+            icon: React.ReactNode;
+        }[];
+        phrase: string;
+        paragraph: string;
     };
+}
 
-    const { items, phrase, paragraph } = infoContent;
+export default function Info({ content }: InfoProps) {
+    const { items, phrase, paragraph } = content;
 
     const renderedItems = items.map((item, index) => (
         <motion.div
