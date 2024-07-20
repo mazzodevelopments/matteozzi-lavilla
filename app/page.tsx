@@ -6,6 +6,7 @@ import Hero from './pages/Hero';
 import Info from './pages/Info';
 import Navbar from './pages/Navbar';
 import Servicios from './pages/Servicios';
+import Staff from './pages/Staff';
 
 const navItems = [
     {
@@ -38,6 +39,8 @@ export default function Home() {
             <Info />
             <Divider />
             <About />
+            <Divider />
+            <Staff />
             <Divider />
             <Servicios />
             <Divider />
