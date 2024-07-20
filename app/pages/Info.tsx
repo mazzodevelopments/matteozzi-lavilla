@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import { GoCodeOfConduct, GoDatabase, GoPeople, GoGear } from 'react-icons/go';
 import { motion } from 'framer-motion';
 
 interface InfoProps {
