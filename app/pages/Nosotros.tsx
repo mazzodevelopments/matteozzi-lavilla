@@ -108,13 +108,13 @@ export default function About() {
                             onClick={closeModal}
                         >
                             <motion.div
-                                className="bg-white rounded-2xl overflow-hidden shadow-xl max-w-5xl max-h-[90vh] w-full"
+                                className="bg-white rounded-2xl overflow-hidden shadow-xl max-w-screen-lg w-full mx-4"
                                 initial={{ y: -50, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 exit={{ y: 50, opacity: 0 }}
                                 transition={{ duration: 0.3 }}
                             >
-                                <div className="relative w-full h-96">
+                                <div className="relative w-full h-64 sm:h-80 md:h-96">
                                     <Image
                                         src={selectedItem.photo}
                                         alt={selectedItem.title}
@@ -123,11 +123,11 @@ export default function About() {
                                         className="transition-transform duration-300 ease-in-out"
                                     />
                                 </div>
-                                <div className="p-6">
-                                    <h2 className="text-3xl font-bold mb-4 text-gray-900">
+                                <div className="p-4 sm:p-6">
+                                    <h2 className="text-xl sm:text-2xl font-bold mb-4 text-gray-900">
                                         {selectedItem.title}
                                     </h2>
-                                    <p className="text-gray-700 mb-4">
+                                    <p className="text-gray-700 mb-4 text-sm sm:text-base overflow-auto">
                                         {selectedItem.description}
                                     </p>
                                     <button
