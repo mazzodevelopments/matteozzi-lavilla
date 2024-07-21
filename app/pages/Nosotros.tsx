@@ -37,7 +37,7 @@ export default function About({ content }: NosotrosProps) {
     }, []);
 
     return (
-        <section id="nosotros" className="min-h-screen bg-gray-100">
+        <section id="nosotros" className="min-h-screen bg-gray-50">
             <div className="max-w-6xl mx-auto pt-16 pb-16 px-6 text-center">
                 <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-black dark:text-white leading-relaxed lg:leading-snug mb-8 mx-auto">
                     Nosotros
