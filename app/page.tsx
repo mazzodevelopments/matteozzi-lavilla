@@ -1,4 +1,3 @@
-import Divider from './components/Divider';
 import Nosotros from './pages/Nosotros';
 import Contacto from './pages/Contacto';
 import Footer from './pages/Footer';
@@ -15,7 +14,7 @@ import plane from './assets/plane.jpg';
 import software from './assets/software.jpg';
 // STAFF
 import emiliano from './assets/emiliano.jpg';
-// SERVICIOS
+// SERVICIO
 import { GiCommercialAirplane, GiTruck, GiWorld } from 'react-icons/gi';
 
 const navItems = [
@@ -141,15 +140,10 @@ export default function Home() {
             <Navbar navBarItems={navItems} />
             <Hero />
             <Info content={infoContent} />
-            <Divider />
             <Nosotros content={nosotrosContent} />
-            <Divider />
             <Staff content={staffContent} />
-            <Divider />
             <Servicios content={serviciosContent} />
-            <Divider />
             <Contacto />
-            <Divider />
             <Footer content={footerContent} />
         </div>
     );
