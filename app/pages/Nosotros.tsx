@@ -37,17 +37,23 @@ export default function About({ content }: NosotrosProps) {
     }, []);
 
     return (
-        <section id="nosotros" className="min-h-screen bg-gray-50">
-            <div className="max-w-6xl mx-auto pt-16 pb-16 px-6 text-center">
-                <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-black dark:text-white leading-relaxed lg:leading-snug mb-8 mx-auto">
-                    Nosotros
-                </h1>
+        <section id="nosotros" className="min-h-screen">
+            <div className="max-w-7xl mx-auto pt-16 pb-16 px-6 text-center">
+                <div className="mb-12">
+                    <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-black dark:text-white leading-relaxed lg:leading-snug mx-auto">
+                        Nosotros
+                    </h1>
+                    <p className="text-sm ">
+                        Expertos en conectar mercados globales <br />
+                        con soluciones estratégicas.
+                    </p>
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                     {content.map((item, index) => (
                         <motion.div
                             key={index}
                             whileHover={{ scale: 1.05 }}
-                            className="bg-white rounded-2xl shadow-lg flex flex-col"
+                            className="bg-gray-50 rounded-2xl shadow-lg flex flex-col"
                             onClick={() => openModal(item)}
                         >
                             <div className="w-full h-56 relative rounded-t-2xl overflow-hidden">
@@ -60,10 +66,10 @@ export default function About({ content }: NosotrosProps) {
                                 />
                             </div>
                             <div className="p-6 flex-1">
-                                <h2 className="text-2xl font-semibold mb-3 text-gray-800">
+                                <h2 className="text-xl font-semibold mb-3 text-gray-800">
                                     {item.title}
                                 </h2>
-                                <p className="text-gray-600 text-sm line-clamp-9">
+                                <p className="text-gray-600 text-xs line-clamp-9">
                                     {item.description}
                                 </p>
                             </div>
@@ -78,6 +84,7 @@ export default function About({ content }: NosotrosProps) {
                 </div>
             </div>
 
+            {/* MODAL */}
             <AnimatePresence>
                 {selectedItem && (
                     <motion.div
