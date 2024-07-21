@@ -15,6 +15,8 @@ import plane from './assets/plane.jpg';
 import software from './assets/software.jpg';
 // STAFF
 import emiliano from './assets/emiliano.jpg';
+// SERVICIOS
+import { GiCommercialAirplane, GiTruck, GiWorld } from 'react-icons/gi';
 
 const navItems = [
     {
@@ -108,6 +110,27 @@ const staffContent = [
     }
 ];
 
+const serviciosContent = [
+    {
+        title: 'Despachante de Aduana',
+        description:
+            'Ofrecemos servicios en despachos de importación, permisos de embarque, importaciones y exportaciones temporales, actividades bancarias, obtención de regímenes especiales, gestiones ante organismos oficiales, permisos de embarque para exportación, y asesoramiento en el área bancaria.',
+        icon: <GiCommercialAirplane />
+    },
+    {
+        title: 'Agentes de Transporte Aduanero',
+        description:
+            'Ofrecemos servicios de Agente de Transporte Aduanero: trasbordos, seguros y fletes nacionales e internacionales, tránsitos terrestres y aéreos, reembarcos, permisos de transporte, y coordinación de embarques. También brindamos atención personalizada, confección de documentos de carga, gestión de vuelos internacionales en el Aeropuerto de S.C. de Bariloche, logística internacional multimodal y servicios de estiba.',
+        icon: <GiTruck />
+    },
+    {
+        title: 'Consultoría en Comercio Internacional',
+        description:
+            'Ofrecemos asesoría integral en comercio internacional, incluyendo análisis de costos, documentación, medios de pago, y asesoría legal aduanera. También gestionamos inscripciones para importadores y exportadores, y brindamos apoyo en regímenes promocionales y clasificaciones arancelarias.',
+        icon: <GiWorld />
+    }
+];
+
 const footerContent = {
     text: 'Powered by © Mazzo Developments - 2024'
 };
@@ -123,7 +146,7 @@ export default function Home() {
             <Divider />
             <Staff content={staffContent} />
             <Divider />
-            <Servicios />
+            <Servicios content={serviciosContent} />
             <Divider />
             <Contacto />
             <Divider />
