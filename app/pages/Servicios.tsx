@@ -41,11 +41,11 @@ export default function Servicios({ content }: ServiciosProps) {
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-left mb-3">
                     Servicios
                 </h1>
-                <p className="text-lg text-gray-500 text-left mb-8">
-                    Explora los servicios que ofrecemos para ti.
+                <p className="text-lg text-gray-500 text-left">
+                    Explora los servicios que ofrecemos para vos.
                 </p>
             </div>
-            <div className="w-full max-w-4xl mx-auto flex flex-col items-start justify-start  overflow-scroll space-y-8 p-6 rounded-3xl bg-gray-50">
+            <div className="w-full max-w-4xl mx-auto flex flex-col items-start justify-start overflow-scroll space-y-8 p-6 rounded-3xl bg-gray-50">
                 {renderedItems}
             </div>
         </section>
