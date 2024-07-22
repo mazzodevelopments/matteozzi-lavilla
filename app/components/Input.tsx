@@ -21,12 +21,15 @@ export default function Input({
     error,
     isTextarea = false
 }: InputProps) {
-    const styles =
-        'shadow-inner appearance-none bg-gray-100 dark:text-white rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-gray-200 hover:bg-gray-200';
+    const commonStyles =
+        'w-full px-4 py-3 border rounded-lg text-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800';
     const labelStyles =
-        'block text-gray-700 dark:text-white text-sm font-bold mb-2 text-left';
+        'block text-white dark:text-white text-sm font-medium mb-2 text-left';
+    const inputStyles =
+        'bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 shadow-sm focus:ring-blue-500 focus:border-blue-500 rounded-3xl';
+
     return (
-        <div className="mb-4 text-left">
+        <div className="mb-4">
             <label className={labelStyles}>{label}:</label>
             {isTextarea ? (
                 <textarea
@@ -34,7 +37,8 @@ export default function Input({
                     value={value}
                     onChange={onChange}
                     required
-                    className={`${styles} pb-20`}
+                    rows={4}
+                    className={`${commonStyles} ${inputStyles} resize-none`}
                 />
             ) : (
                 <input
@@ -43,10 +47,10 @@ export default function Input({
                     value={value}
                     onChange={onChange}
                     required
-                    className={`${styles}`}
+                    className={`${commonStyles} ${inputStyles}`}
                 />
             )}
-            {error && <p className="text-sm text-red-500">{error}</p>}
+            {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
         </div>
     );
 }
