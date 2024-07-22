@@ -19,7 +19,7 @@ export default function Servicios({ content }: ServiciosProps) {
         <motion.div
             key={idx}
             className="flex flex-col items-start mb-4 p-4"
-            whileHover={{ scale: 1.05, y: -5, color: '#3B82F6' }}
+            whileHover={{ scale: 1.025, y: -5, color: '#3B82F6' }}
             style={{ color: '#1E293B' }}
             onMouseEnter={() => setHoveredIndex(idx)}
             onMouseLeave={() => setHoveredIndex(null)}
