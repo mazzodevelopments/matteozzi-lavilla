@@ -13,7 +13,7 @@ export default function Hero() {
     return (
         <section
             id="home"
-            className="w-screen flex flex-col items-center justify-center text-white h-[calc(100vh-60px)] mt-[60px] relative"
+            className="w-screen flex flex-col items-center justify-center text-white h-screen relative"
         >
             <ImagesSlider
                 images={images.map((image) => image.src)}
