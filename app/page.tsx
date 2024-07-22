@@ -1,5 +1,4 @@
 import Nosotros from './pages/Nosotros';
-import Contacto from './pages/Contacto';
 import Footer from './pages/Footer';
 import Hero from './pages/Hero';
 import Info from './pages/Info';
@@ -16,12 +15,10 @@ import software from './assets/software.jpg';
 import emiliano from './assets/emiliano.jpg';
 // SERVICIO
 import { GiCommercialAirplane, GiTruck, GiWorld } from 'react-icons/gi';
+import Contacto from './pages/Contacto';
+import { FaEnvelope, FaMapPin, FaPhone, FaMapLocation } from 'react-icons/fa6';
 
 const navItems = [
-    {
-        name: 'Inicio',
-        link: 'home'
-    },
     {
         name: 'Nosotros',
         link: 'nosotros'
@@ -29,6 +26,10 @@ const navItems = [
     {
         name: 'Servicios',
         link: 'servicios'
+    },
+    {
+        name: 'Staff',
+        link: 'staff'
     },
     {
         name: 'Contacto',
@@ -40,19 +41,26 @@ const infoContent = {
     items: [
         {
             title: 'Profesionalidad',
-            icon: <GoCodeOfConduct />
+            icon: <GoCodeOfConduct />,
+            description:
+                'Trabajamos con los más altos estándares éticos y profesionales.'
         },
         {
             title: 'Experiencia',
-            icon: <GoDatabase />
+            icon: <GoDatabase />,
+            description: 'Contamos con años de experiencia en el sector.'
         },
         {
             title: 'Confianza + Fidelidad',
-            icon: <GoPeople />
+            icon: <GoPeople />,
+            description:
+                'Nuestros clientes confían en nosotros y siempre vuelven.'
         },
         {
             title: 'Estructura',
-            icon: <GoGear />
+            icon: <GoGear />,
+            description:
+                'Nuestra estructura organizacional es sólida y eficiente.'
         }
     ],
     phrase: '¿Está interesado en importar-exportar o desea tener una mejor alternativa en su operativa de comercio exterior?',
@@ -131,7 +139,19 @@ const serviciosContent = [
 ];
 
 const footerContent = {
-    text: 'Powered by © Mazzo Developments - 2024'
+    text: 'Powered by © Mazzo Developments - 2024',
+    contactDetails: [
+        { icon: <FaEnvelope />, text: 'info@matteozzi-lavilla.com.ar' },
+        { icon: <FaPhone />, text: '54-2944-422066' },
+        {
+            icon: <FaMapLocation />,
+            text: 'San Carlos de Bariloche, Río Negro, Argentina (8400)'
+        },
+        {
+            icon: <FaMapPin />,
+            text: 'Mitre 125, 1er Piso, Oficinas 124-125'
+        }
+    ]
 };
 
 export default function Home() {
@@ -141,8 +161,8 @@ export default function Home() {
             <Hero />
             <Info content={infoContent} />
             <Nosotros content={nosotrosContent} />
-            <Staff content={staffContent} />
             <Servicios content={serviciosContent} />
+            <Staff content={staffContent} />
             <Contacto />
             <Footer content={footerContent} />
         </div>
