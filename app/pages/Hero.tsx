@@ -13,7 +13,7 @@ export default function Hero() {
     return (
         <section
             id="home"
-            className="w-screen flex flex-col items-center justify-center text-white h-screen relative"
+            className="flex flex-col items-center justify-center relative w-screen h-screen text-white"
         >
             <ImagesSlider
                 images={images.map((image) => image.src)}
@@ -21,7 +21,7 @@ export default function Hero() {
                 autoplay
                 className="w-full h-full"
             />
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <div className="flex flex-col absolute inset-0 items-center justify-center">
                 <div className="flex flex-col items-center gap-3">
                     <h1 className="text-center text-4xl font-bold text-white mix-blend-difference md:text-8xl">
                         Matteozzi Lavilla
@@ -39,7 +39,7 @@ export default function Hero() {
                     >
                         <Link
                             href="#contacto"
-                            className="inline-block mx-auto px-8 py-2 bg-blue-600 rounded-md text-white font-normal shadow-[0_4px_14px_0_rgb(0,118,255,25%)] hover:shadow-[0_6px_20px_rgba(0,118,255,50%)] hover:bg-blue-700 transition duration-200 ease-linear"
+                            className="inline-block mx-auto px-8 py-2 rounded-md bg-blue-600  text-white font-normal shadow-[0_4px_14px_0_rgb(0,118,255,25%)] hover:shadow-[0_6px_20px_rgba(0,118,255,50%)] hover:bg-blue-700 transition duration-200 ease-linear"
                         >
                             Contáctanos
                         </Link>
