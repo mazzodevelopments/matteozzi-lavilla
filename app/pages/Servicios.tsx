@@ -1,14 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import {
-    GiCommercialAirplane,
-    GiPlanePilot,
-    GiTowTruck,
-    GiTransportationRings,
-    GiTruck,
-    GiWorld
-} from 'react-icons/gi';
+import { motion } from 'framer-motion';
 
 interface Servicio {
     title: string;
@@ -23,60 +15,38 @@ interface ServiciosProps {
 export default function Servicios({ content }: ServiciosProps) {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+    const renderedItems = content.map((item, idx) => (
+        <motion.div
+            key={idx}
+            className="flex flex-col items-start mb-4 p-4"
+            whileHover={{ scale: 1.05, y: -5, color: '#3B82F6' }}
+            style={{ color: '#1E293B' }}
+            onMouseEnter={() => setHoveredIndex(idx)}
+            onMouseLeave={() => setHoveredIndex(null)}
+        >
+            <div className="bg-blue-600 text-white font-bold py-2 px-4 rounded-full text-xl mb-3">
+                {item.icon}
+            </div>
+            <h2 className="text-2xl font-bold mb-2">{item.title}</h2>
+            <p className="text-gray-600 text-md">{item.description}</p>
+        </motion.div>
+    ));
+
     return (
         <section
             id="servicios"
-            className="flex justify-center items-center min-h-screen"
+            className="flex flex-col min-h-screen max-h-screen p-8"
         >
-            <div className="w-full max-w-7xl p-8">
-                <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-black leading-relaxed lg:leading-snug mb-8 mx-auto">
+            <div className="w-full max-w-4xl mx-auto mb-8">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-left mb-3">
                     Servicios
                 </h1>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-10">
-                    {content.map((item, idx) => (
-                        <div
-                            key={item.title}
-                            className="relative group block p-2 h-full w-full max-w-sm"
-                            onMouseEnter={() => setHoveredIndex(idx)}
-                            onMouseLeave={() => setHoveredIndex(null)}
-                        >
-                            <AnimatePresence>
-                                {hoveredIndex === idx && (
-                                    <motion.span
-                                        className="absolute inset-0 h-full w-full bg-neutral-200 block rounded-3xl"
-                                        layoutId="hoverBackground"
-                                        initial={{ opacity: 0 }}
-                                        animate={{
-                                            opacity: 1,
-                                            transition: { duration: 0.15 }
-                                        }}
-                                        exit={{
-                                            opacity: 0,
-                                            transition: {
-                                                duration: 0.15,
-                                                delay: 0.2
-                                            }
-                                        }}
-                                    />
-                                )}
-                            </AnimatePresence>
-                            <div className="rounded-2xl h-full w-full p-6 overflow-hidden bg-white border border-transparent group-hover:border-gray-200 relative z-20 shadow-md transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">
-                                <div className="relative z-50 flex items-center mb-4 text-4xl text-blue-500">
-                                    {item.icon}
-                                </div>
-                                <div className="p-4">
-                                    <h4 className="text-zinc-800 font-bold tracking-wide mt-4 text-lg">
-                                        {item.title}
-                                    </h4>
-                                    <p className="mt-4 text-zinc-600 tracking-wide leading-relaxed text-sm">
-                                        {item.description}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                <p className="text-lg text-gray-500 text-left mb-8">
+                    Explora los servicios que ofrecemos para ti.
+                </p>
+            </div>
+            <div className="w-full max-w-4xl mx-auto flex flex-col items-start justify-start  overflow-scroll space-y-8 p-6 rounded-3xl bg-gray-50">
+                {renderedItems}
             </div>
         </section>
     );
