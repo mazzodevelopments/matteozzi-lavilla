@@ -38,7 +38,7 @@ export default function Servicios({ content }: ServiciosProps) {
             className="flex flex-col min-h-screen max-h-screen p-8"
         >
             <div className="w-full max-w-4xl mx-auto mb-8">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-left mb-3">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-left mb-3 mt-6">
                     Servicios
                 </h1>
                 <p className="text-lg text-gray-500 text-left">
