@@ -1,12 +1,10 @@
 'use client';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from 'emailjs-com';
 import Input from '../components/Input';
-import ContactDetail from '../components/ContactDetail';
 import { FaPhone, FaEnvelope, FaMapPin } from 'react-icons/fa';
 import { FaMapLocation } from 'react-icons/fa6';
-import { submitForm } from '../utils/submitForm';
-import Divider from '../components/Divider';
 
 interface ContactState {
     name: string;
@@ -63,7 +61,38 @@ export default function Contacto() {
             return;
         }
 
-        submitForm(formData, setResponse, setFormData);
+        const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+        const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+        const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
+
+        const templateParams = {
+            from_name: formData.name,
+            from_email: formData.email,
+            to_name: 'Matteozzi Lavilla',
+            phone: formData.phone,
+            subject: formData.subject,
+            message: formData.message
+        };
+
+        emailjs.send(serviceId, templateId, templateParams, publicKey).then(
+            (response) => {
+                console.log('SUCCESS!', response);
+                setResponse('¡Mensaje enviado!');
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    subject: '',
+                    message: ''
+                });
+                setTimeout(() => {
+                    setResponse(null);
+                }, 2000);
+            },
+            (error) => {
+                console.log('FAILED...', error.text);
+            }
+        );
     };
 
     const contactDetails = [
@@ -80,31 +109,31 @@ export default function Contacto() {
     ];
 
     return (
-        <section
-            id="contacto"
-            className="min-h-screen max-h-screen pt-16 pb-16 bg-gray-50 dark:bg-gray-800"
-        >
+        <section id="contacto" className="min-h-screen pt-16 pb-16 bg-white ">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center text-black dark:text-white mb-12">
                 Contacto
             </h1>
             <div className="container mx-auto flex flex-col lg:flex-row lg:divide-x divide-gray-300 dark:divide-gray-700">
                 <div className="w-full lg:w-1/2 p-8">
-                    <h2 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-6">
+                    <h2 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-3">
                         Datos:
                     </h2>
                     <div>
                         {contactDetails.map((item, index) => (
-                            <ContactDetail
-                                key={index}
-                                icon={item.icon}
-                                text={item.text}
-                            />
+                            <div key={index} className="flex items-center m-4">
+                                <div className="mr-4 text-2xl text-[#0070f3]">
+                                    {item.icon}
+                                </div>
+                                <p className="text-lg font-medium text-black dark:text-white">
+                                    {item.text}
+                                </p>
+                            </div>
                         ))}
                     </div>
                     <div className="mt-8">
                         <iframe
                             className="rounded-xl"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3005.036365258706!2d-71.306176!3d-41.133732099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961a7b72164b0f6f%3A0x9db38445b9cde801!2sMitre%20250%2C%20R8400%20San%20Carlos%20de%20Bariloche%2C%20R%C3%ADo%20Negro!5e0!3m2!1ses-419!2sar!4v1717110888489!5m2!1ses-419!2sar"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3005.0345910880546!2d-71.31054172398132!3d-41.1337708309782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961a7b725f18890d%3A0xfe2be7e383960c80!2sMitre%20125%2C%20R8400%20San%20Carlos%20de%20Bariloche%2C%20R%C3%ADo%20Negro!5e0!3m2!1ses-419!2sar!4v1721495291864!5m2!1ses-419!2sar"
                             width="100%"
                             height="250"
                             style={{ border: 0 }}
