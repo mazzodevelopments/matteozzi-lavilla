@@ -2,9 +2,12 @@ import Nosotros from './pages/Nosotros';
 import Footer from './pages/Footer';
 import Hero from './pages/Hero';
 import Info from './pages/Info';
-import Navbar from './pages/Navbar';
 import Servicios from './pages/Servicios';
 import Staff from './pages/Staff';
+// HERO
+import hero1 from './assets/hero1.jpg';
+import hero2 from './assets/hero2.jpg';
+import hero3 from './assets/hero3.jpg';
 // INFO
 import { GoCodeOfConduct, GoDatabase, GoGear, GoPeople } from 'react-icons/go';
 // NOSOTROS
@@ -36,6 +39,11 @@ const links = [
         link: 'contacto'
     }
 ];
+
+const heroContent = {
+    images: [hero1, hero2, hero3],
+    navBarLinks: links
+};
 
 const infoContent = {
     items: [
@@ -158,8 +166,7 @@ const footerContent = {
 export default function Home() {
     return (
         <div>
-            <Navbar navBarItems={links} />
-            <Hero />
+            <Hero content={heroContent} />
             <Info content={infoContent} />
             <Nosotros content={nosotrosContent} />
             <Servicios content={serviciosContent} />

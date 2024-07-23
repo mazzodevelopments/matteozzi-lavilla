@@ -1,19 +1,27 @@
 'use client';
-import hero1 from '../assets/hero1.jpg';
-import hero2 from '../assets/hero2.jpg';
-import hero3 from '../assets/hero3.jpg';
+import { StaticImageData } from 'next/image';
 import { ImagesSlider } from '../components/ui/images-slider';
 import { TextGenerateEffect } from '../components/ui/text-generate-effect';
 import { motion } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
 
-export default function Hero() {
-    const images = [hero1, hero2, hero3];
+interface HeroProps {
+    content: {
+        images: StaticImageData[];
+        navBarLinks: {
+            name: string;
+            link: string;
+        }[];
+    };
+}
+
+export default function Hero({ content }: HeroProps) {
+    const { images, navBarLinks } = content;
 
     return (
         <section
             id="home"
-            className="flex flex-col items-center justify-center relative w-screen h-screen text-white"
+            className="relative flex flex-col items-center justify-center w-screen h-screen text-white"
         >
             <ImagesSlider
                 images={images.map((image) => image.src)}
@@ -21,6 +29,26 @@ export default function Hero() {
                 autoplay
                 className="w-full h-full"
             />
+            <nav className="absolute top-0 left-0 right-0 z-10 px-2 py-1.5">
+                <div className="flex justify-between items-center h-full">
+                    <div className="flex-1 flex justify-center items-center">
+                        <div className="flex items-center space-x-4">
+                            {navBarLinks.map((item) => (
+                                <ScrollLink
+                                    className="text-sm font-semibold text-gray-300 hover:text-blue-500 py-4 px-2 cursor-pointer"
+                                    key={item.name}
+                                    to={item.link}
+                                    smooth={true}
+                                    offset={-70}
+                                    duration={500}
+                                >
+                                    {item.name}
+                                </ScrollLink>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </nav>
             <div className="flex flex-col absolute inset-0 items-center justify-center">
                 <div className="flex flex-col items-center gap-3">
                     <h1 className="text-center text-4xl font-bold text-white mix-blend-difference md:text-8xl">
