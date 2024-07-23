@@ -92,25 +92,28 @@ export default function Contacto() {
     return (
         <section
             id="contacto"
-            className="flex justify-center items-center mb-16"
+            className="flex justify-center items-center mb-16 px-4"
         >
-            <div className="bg-blue-600 rounded-3xl p-8 w-full max-w-7xl flex">
+            <div className="bg-blue-600 rounded-3xl p-8 w-full max-w-7xl flex flex-col lg:flex-row">
                 {/* Primer y segundo tercio: texto */}
-                <div className="w-2/3 pr-8 flex flex-col text-white">
+                <div className="w-full lg:w-2/3 lg:pr-8 flex flex-col text-white mb-8 lg:mb-0">
                     <span className="text-md font-semibold mb-2">
                         A TU DISPOSICIÓN
                     </span>
                     <h1 className="text-5xl font-bold mb-4">
-                        ¿Aún con dudas? Escríbenos y recibe toda la información
+                        ¿Todavía con dudas?
                     </h1>
-                    <p className="text-xl">
+                    <h1 className="text-5xl md:text-4xl font-semibold mb-4 text-gray-100">
+                        Escribínos y recibí toda la información
+                    </h1>
+                    <p className="text-lg md:text-xl">
                         Nuestros horarios de atención son 24/7 por lo que
                         responderemos a tus inquietudes de inmediato.
                     </p>
                 </div>
 
                 {/* Tercer tercio: formulario */}
-                <div className="w-2/3 flex justify-center items-center">
+                <div className="w-full lg:w-1/3 flex justify-center items-center">
                     <div className="w-full max-w-lg">
                         <form onSubmit={(e) => e.preventDefault()}>
                             <Input
@@ -121,8 +124,8 @@ export default function Contacto() {
                                 onChange={handleChange}
                                 error={errors.name}
                             />
-                            <div className="flex flex-wrap">
-                                <div className="w-1/2 pr-2">
+                            <div className="flex flex-col md:flex-row md:space-x-2">
+                                <div className="w-full md:w-1/2 mb-4 md:mb-0">
                                     <Input
                                         label="Mail"
                                         type="email"
@@ -132,7 +135,7 @@ export default function Contacto() {
                                         error={errors.email}
                                     />
                                 </div>
-                                <div className="w-1/2 pl-2">
+                                <div className="w-full md:w-1/2">
                                     <Input
                                         label="Teléfono"
                                         type="tel"
