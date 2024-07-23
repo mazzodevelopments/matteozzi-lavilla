@@ -19,7 +19,7 @@ export default function Info({ content }: InfoProps) {
     const renderedItems = items.map((item, index) => (
         <motion.div
             key={index}
-            className="bg-white rounded-lg p-4 text-center m-2 flex flex-col items-center"
+            className="flex flex-col p-4 m-2 text-center items-center"
             whileHover={{ scale: 1.1, y: -5, color: '#3B82F6' }}
             style={{ color: '#1E293B' }}
         >
@@ -38,10 +38,10 @@ export default function Info({ content }: InfoProps) {
             <h1 className="text-xl sm:text-xl md:text-3xl lg:text-5xl font-bold text-center max-w-5xl mb-4 pt-8">
                 {phrase}
             </h1>
-            <p className="max-w-2xl text-xs sm:text-sm md:text-md lg:text-lg text-gray-600 text-center mb-8">
+            <p className="max-w-2xl text-xs sm:text-sm md:text-md lg:text-lg text-gray-600 font-medium text-center mb-8">
                 {paragraph}
             </p>
-            <div className="flex flex-col md:flex-row justify-center items-center w-full">
+            <div className="flex flex-col md:flex-row justify-center items-center">
                 {renderedItems}
             </div>
         </section>
