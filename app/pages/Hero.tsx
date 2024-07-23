@@ -1,11 +1,11 @@
 'use client';
-import Link from 'next/link';
 import hero1 from '../assets/hero1.jpg';
 import hero2 from '../assets/hero2.jpg';
 import hero3 from '../assets/hero3.jpg';
 import { ImagesSlider } from '../components/ui/images-slider';
 import { TextGenerateEffect } from '../components/ui/text-generate-effect';
 import { motion } from 'framer-motion';
+import { Link as ScrollLink } from 'react-scroll';
 
 export default function Hero() {
     const images = [hero1, hero2, hero3];
@@ -37,12 +37,14 @@ export default function Hero() {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                     >
-                        <Link
-                            href="#contacto"
-                            className="inline-block mx-auto px-8 py-2 rounded-md bg-blue-600  text-white font-normal shadow-[0_4px_14px_0_rgb(0,118,255,25%)] hover:shadow-[0_6px_20px_rgba(0,118,255,50%)] hover:bg-blue-700 transition duration-200 ease-linear"
+                        <ScrollLink
+                            to="contacto"
+                            smooth={true}
+                            duration={500}
+                            className="inline-block mx-auto px-8 py-2 rounded-2xl bg-blue-600 text-white font-normal shadow-[0_4px_14px_0_rgb(0,118,255,25%)] hover:shadow-[0_6px_20px_rgba(0,118,255,50%)] hover:bg-blue-700 transition duration-200 ease-linear cursor-pointer"
                         >
                             Contáctanos
-                        </Link>
+                        </ScrollLink>
                     </motion.div>
                 </div>
             </div>
