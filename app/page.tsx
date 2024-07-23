@@ -18,7 +18,7 @@ import { GiCommercialAirplane, GiTruck, GiWorld } from 'react-icons/gi';
 import Contacto from './pages/Contacto';
 import { FaEnvelope, FaMapPin, FaPhone, FaMapLocation } from 'react-icons/fa6';
 
-const navItems = [
+const links = [
     {
         name: 'Nosotros',
         link: 'nosotros'
@@ -151,13 +151,14 @@ const footerContent = {
             icon: <FaMapPin />,
             text: 'Mitre 125, 1er Piso, Oficinas 124-125'
         }
-    ]
+    ],
+    links: links
 };
 
 export default function Home() {
     return (
         <div>
-            <Navbar navBarItems={navItems} />
+            <Navbar navBarItems={links} />
             <Hero />
             <Info content={infoContent} />
             <Nosotros content={nosotrosContent} />
