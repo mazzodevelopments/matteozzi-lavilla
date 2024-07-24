@@ -33,10 +33,7 @@ export default function Servicios({ content }: ServiciosProps) {
     ));
 
     return (
-        <section
-            id="servicios"
-            className="flex flex-col min-h-screen max-h-screen p-8"
-        >
+        <section id="servicios" className="flex flex-col min-h-screen p-8">
             <div className="w-full max-w-6xl mx-auto mb-8">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-left mb-3 mt-6">
                     Servicios
@@ -45,7 +42,7 @@ export default function Servicios({ content }: ServiciosProps) {
                     Explora los servicios que ofrecemos para vos.
                 </p>
             </div>
-            <div className="w-full max-w-6xl mx-auto flex flex-col items-start justify-start overflow-scroll space-y-8 p-6 rounded-3xl bg-gray-50">
+            <div className="w-full max-w-6xl mx-auto flex flex-col items-start justify-start space-y-8 p-6 rounded-3xl bg-gray-50">
                 {renderedItems}
             </div>
         </section>
