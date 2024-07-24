@@ -8,8 +8,6 @@ import Staff from './pages/Staff';
 import hero1 from './assets/hero1.jpg';
 import hero2 from './assets/hero2.jpg';
 import hero3 from './assets/hero3.jpg';
-// INFO
-import { GoCodeOfConduct, GoDatabase, GoGear, GoPeople } from 'react-icons/go';
 // NOSOTROS
 import container from './assets/containers.jpg';
 import plane from './assets/plane.jpg';
@@ -47,30 +45,11 @@ const heroContent = {
 };
 
 const infoContent = {
-    items: [
-        {
-            title: 'Profesionalidad',
-            icon: <GoCodeOfConduct />,
-            description:
-                'Trabajamos con los más altos estándares éticos y profesionales.'
-        },
-        {
-            title: 'Experiencia',
-            icon: <GoDatabase />,
-            description: 'Contamos con años de experiencia en el sector.'
-        },
-        {
-            title: 'Confianza + Fidelidad',
-            icon: <GoPeople />,
-            description:
-                'Nuestros clientes confían en nosotros y siempre vuelven.'
-        },
-        {
-            title: 'Estructura',
-            icon: <GoGear />,
-            description:
-                'Nuestra estructura organizacional es sólida y eficiente.'
-        }
+    words: [
+        'Profesionalidad',
+        'Experiencia',
+        'Confianza + Fidelidad',
+        'Estructura'
     ],
     phrase: '¿Está interesado en importar-exportar o desea tener una mejor alternativa en su operativa de comercio exterior?',
     paragraph:
