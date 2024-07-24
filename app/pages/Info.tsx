@@ -1,48 +1,37 @@
 'use client';
 import React from 'react';
-import { motion } from 'framer-motion';
+import { FlipWords } from '../components/ui/flip-words';
 
 interface InfoProps {
     content: {
-        items: {
-            title: string;
-            icon: React.ReactNode;
-        }[];
+        words: string[];
         phrase: string;
         paragraph: string;
     };
 }
 
 export default function Info({ content }: InfoProps) {
-    const { items, phrase, paragraph } = content;
-
-    const renderedItems = items.map((item, index) => (
-        <motion.div
-            key={index}
-            className="flex flex-col p-4 m-2 text-center items-center"
-            whileHover={{ scale: 1.1, y: -5, color: '#3B82F6' }}
-            style={{ color: '#1E293B' }}
-        >
-            <div className="text-6xl sm:text-9xl mb-4">{item.icon}</div>
-            <h2 className="text-sm sm:text-base font-semibold mb-4">
-                {item.title}
-            </h2>
-        </motion.div>
-    ));
+    const { words, phrase, paragraph } = content;
 
     return (
         <section
             id="info"
             className="flex flex-col justify-center items-center min-h-screen p-4"
         >
-            <h1 className="text-xl sm:text-xl md:text-3xl lg:text-5xl font-bold text-center max-w-5xl mb-4 pt-8">
-                {phrase}
-            </h1>
-            <p className="max-w-2xl text-xs sm:text-sm md:text-md lg:text-lg text-gray-600 font-medium text-center mb-8">
-                {paragraph}
-            </p>
-            <div className="flex flex-col md:flex-row justify-center items-center">
-                {renderedItems}
+            <div className="text-center mb-12 w-full max-w-6xl">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+                    {phrase}
+                </h1>
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-500 font-medium max-w-3xl mx-auto">
+                    {paragraph}
+                </p>
+            </div>
+
+            <div className="flex justify-center items-center w-full ">
+                <FlipWords
+                    words={words}
+                    className="font-bold text-5xl sm:text-6xl md:text-7xl text-blue-600"
+                />
             </div>
         </section>
     );
