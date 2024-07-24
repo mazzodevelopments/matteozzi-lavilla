@@ -4,6 +4,7 @@ import Hero from './pages/Hero';
 import Info from './pages/Info';
 import Servicios from './pages/Servicios';
 import Staff from './pages/Staff';
+import Contacto from './pages/Contacto';
 // HERO
 import hero1 from './assets/hero1.jpg';
 import hero2 from './assets/hero2.jpg';
@@ -16,18 +17,16 @@ import software from './assets/software.jpg';
 import emiliano from './assets/emiliano.jpg';
 // SERVICIO
 import { GiCommercialAirplane, GiTruck, GiWorld } from 'react-icons/gi';
-import Contacto from './pages/Contacto';
 import { FaEnvelope, FaMapPin, FaPhone, FaMapLocation } from 'react-icons/fa6';
-import Divider from './components/Divider';
 
 const links = [
     {
-        name: 'Nosotros',
-        link: 'nosotros'
-    },
-    {
         name: 'Servicios',
         link: 'servicios'
+    },
+    {
+        name: 'Nosotros',
+        link: 'nosotros'
     },
     {
         name: 'Staff',
@@ -148,10 +147,8 @@ export default function Home() {
         <div>
             <Hero content={heroContent} />
             <Info content={infoContent} />
-            <Divider />
-            <Nosotros content={nosotrosContent} />
-            <Divider />
             <Servicios content={serviciosContent} />
+            <Nosotros content={nosotrosContent} />
             <Staff content={staffContent} />
             <Contacto />
             <Footer content={footerContent} />
