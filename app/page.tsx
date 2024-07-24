@@ -20,6 +20,7 @@ import emiliano from './assets/emiliano.jpg';
 import { GiCommercialAirplane, GiTruck, GiWorld } from 'react-icons/gi';
 import Contacto from './pages/Contacto';
 import { FaEnvelope, FaMapPin, FaPhone, FaMapLocation } from 'react-icons/fa6';
+import Divider from './components/Divider';
 
 const links = [
     {
@@ -168,7 +169,9 @@ export default function Home() {
         <div>
             <Hero content={heroContent} />
             <Info content={infoContent} />
+            <Divider />
             <Nosotros content={nosotrosContent} />
+            <Divider />
             <Servicios content={serviciosContent} />
             <Staff content={staffContent} />
             <Contacto />

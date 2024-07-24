@@ -33,11 +33,10 @@ export default function About({ content }: NosotrosProps) {
     }, []);
 
     return (
-        <section id="nosotros" className="min-h-screen mb-16 bg-gray-50">
+        <section id="nosotros" className="min-h-screen mb-16 ">
             <div className="max-w-6xl mx-auto pt-16 pb-16 px-6">
-                {/* Centrar el título */}
                 <div className="mb-12 text-center">
-                    <p>Nosotros</p>
+                    <p className="text-gray-600 text-md">Nosotros</p>
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white">
                         ¿Quiénes somos?
                     </h1>
