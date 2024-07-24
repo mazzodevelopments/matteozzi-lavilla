@@ -16,9 +16,9 @@ export default function Info({ content }: InfoProps) {
     return (
         <section
             id="info"
-            className="flex flex-col justify-center items-center min-h-screen p-4"
+            className="relative flex flex-col justify-center items-center min-h-screen p-4 bg-pattern"
         >
-            <div className="text-center mb-12 w-full max-w-6xl">
+            <div className="text-center mb-12 w-full max-w-6xl relative z-10">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
                     {phrase}
                 </h1>
@@ -27,7 +27,7 @@ export default function Info({ content }: InfoProps) {
                 </p>
             </div>
 
-            <div className="flex justify-center items-center w-full ">
+            <div className="flex justify-center items-center w-full relative z-10">
                 <FlipWords
                     words={words}
                     className="font-bold text-5xl sm:text-6xl md:text-7xl text-blue-600"
