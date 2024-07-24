@@ -38,24 +38,25 @@ const links = [
     }
 ];
 
-const heroContent = {
+const hero = {
     images: [hero1, hero2, hero3],
     navBarLinks: links
 };
 
-const infoContent = {
+const info = {
     words: [
         'Profesionalidad',
         'Experiencia',
-        'Confianza + Fidelidad',
+        'Confianza',
+        'Fidelidad',
         'Estructura'
     ],
-    phrase: '¿Está interesado en importar-exportar o desea tener una mejor alternativa en su operativa de comercio exterior?',
+    phrase: '¿Estás interesado en importar-exportar o deseas tener una mejor alternativa en su operativa de comercio exterior?',
     paragraph:
-        'Usted puede contar con Matteozzi-Lavilla como colaborador de sus operaciones de Comercio Internacional. Le brindamos:'
+        'Podés contar con Matteozzi-Lavilla como colaborador de tus operaciones de Comercio Internacional. Te brindamos:'
 };
 
-const nosotrosContent = [
+const nosotros = [
     {
         title: 'Quienes Somos?',
         description:
@@ -76,7 +77,7 @@ const nosotrosContent = [
     }
 ];
 
-const staffContent = [
+const staff = [
     {
         rol: 'CEO',
         nombreCompleto: 'Emiliano Matteozzi',
@@ -104,7 +105,7 @@ const staffContent = [
     }
 ];
 
-const serviciosContent = [
+const servicios = [
     {
         title: 'Despachante de Aduana',
         description:
@@ -125,7 +126,7 @@ const serviciosContent = [
     }
 ];
 
-const footerContent = {
+const footer = {
     text: 'Powered by © Mazzo Developments - 2024',
     contactDetails: [
         { icon: <FaEnvelope />, text: 'info@matteozzi-lavilla.com.ar' },
@@ -145,13 +146,13 @@ const footerContent = {
 export default function Home() {
     return (
         <div>
-            <Hero content={heroContent} />
-            <Info content={infoContent} />
-            <Servicios content={serviciosContent} />
-            <Nosotros content={nosotrosContent} />
-            <Staff content={staffContent} />
+            <Hero content={hero} />
+            <Info content={info} />
+            <Servicios content={servicios} />
+            <Nosotros content={nosotros} />
+            <Staff content={staff} />
             <Contacto />
-            <Footer content={footerContent} />
+            <Footer content={footer} />
         </div>
     );
 }
