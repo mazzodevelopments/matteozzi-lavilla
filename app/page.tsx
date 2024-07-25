@@ -21,25 +21,25 @@ import { FaEnvelope, FaMapPin, FaPhone, FaMapLocation } from 'react-icons/fa6';
 
 const links = [
     {
-        name: 'Servicios',
+        texto: 'Servicios',
         link: 'servicios'
     },
     {
-        name: 'Nosotros',
+        texto: 'Nosotros',
         link: 'nosotros'
     },
     {
-        name: 'Staff',
+        texto: 'Staff',
         link: 'staff'
     },
     {
-        name: 'Contacto',
+        texto: 'Contacto',
         link: 'contacto'
     }
 ];
 
 const hero = {
-    images: [hero1, hero2, hero3],
+    imagenes: [hero1, hero2, hero3],
     navBarLinks: links
 };
 
@@ -126,17 +126,17 @@ const staff = [
 ];
 
 const footer = {
-    text: 'Powered by © Mazzo Developments - 2024',
+    texto: 'Powered by © Mazzo Developments - 2024',
     contactDetails: [
-        { icon: <FaEnvelope />, text: 'info@matteozzi-lavilla.com.ar' },
-        { icon: <FaPhone />, text: '54-2944-422066' },
+        { icon: <FaEnvelope />, texto: 'info@matteozzi-lavilla.com.ar' },
+        { icon: <FaPhone />, texto: '54-2944-422066' },
         {
             icon: <FaMapLocation />,
-            text: 'San Carlos de Bariloche, Río Negro, Argentina (8400)'
+            texto: 'San Carlos de Bariloche, Río Negro, Argentina (8400)'
         },
         {
             icon: <FaMapPin />,
-            text: 'Mitre 125, 1er Piso, Oficinas 124-125'
+            texto: 'Mitre 125, 1er Piso, Oficinas 124-125'
         }
     ],
     links: links

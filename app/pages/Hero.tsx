@@ -7,16 +7,16 @@ import { Link as ScrollLink } from 'react-scroll';
 
 interface HeroProps {
     content: {
-        images: StaticImageData[];
+        imagenes: StaticImageData[];
         navBarLinks: {
-            name: string;
+            texto: string;
             link: string;
         }[];
     };
 }
 
 export default function Hero({ content }: HeroProps) {
-    const { images, navBarLinks } = content;
+    const { imagenes, navBarLinks } = content;
 
     return (
         <section
@@ -24,7 +24,7 @@ export default function Hero({ content }: HeroProps) {
             className="relative flex flex-col items-center justify-center w-screen h-screen text-white"
         >
             <ImagesSlider
-                images={images.map((image) => image.src)}
+                images={imagenes.map((imagen) => imagen.src)}
                 overlay
                 autoplay
                 className="w-full h-full"
@@ -36,13 +36,13 @@ export default function Hero({ content }: HeroProps) {
                             {navBarLinks.map((item) => (
                                 <ScrollLink
                                     className="text-sm font-semibold text-gray-300 hover:text-blue-500 py-4 px-2 cursor-pointer"
-                                    key={item.name}
+                                    key={item.texto}
                                     to={item.link}
                                     smooth={true}
                                     offset={-70}
                                     duration={500}
                                 >
-                                    {item.name}
+                                    {item.texto}
                                 </ScrollLink>
                             ))}
                         </div>
@@ -51,7 +51,7 @@ export default function Hero({ content }: HeroProps) {
             </nav>
             <div className="flex flex-col absolute inset-0 items-center justify-center">
                 <div className="flex flex-col items-center gap-3">
-                    <h1 className="text-center text-4xl font-bold text-white mix-blend-difference md:text-8xl">
+                    <h1 className="text-center text-4xl sm:text-6xl md:text-8xl font-bold text-white mix-blend-difference ">
                         Matteozzi Lavilla
                     </h1>
                     <TextGenerateEffect
@@ -69,7 +69,7 @@ export default function Hero({ content }: HeroProps) {
                             to="contacto"
                             smooth={true}
                             duration={500}
-                            className="inline-block mx-auto px-8 py-2 rounded-2xl bg-blue-600 text-white font-normal shadow-[0_4px_14px_0_rgb(0,118,255,25%)] hover:shadow-[0_6px_20px_rgba(0,118,255,50%)] hover:bg-blue-700 transition duration-200 ease-linear cursor-pointer"
+                            className="inline-block mx-auto px-8 py-2 rounded-3xl bg-blue-600 text-white font-normal shadow-[0_4px_14px_0_rgb(0,118,255,25%)] hover:shadow-[0_6px_20px_rgba(0,118,255,50%)] hover:bg-blue-700 transition duration-200 ease-linear cursor-pointer"
                         >
                             Contáctanos
                         </ScrollLink>

@@ -4,20 +4,20 @@ import { Link as ScrollLink } from 'react-scroll';
 
 interface FooterProps {
     content: {
-        text: string;
+        texto: string;
         contactDetails: {
             icon: ReactNode;
-            text: string;
+            texto: string;
         }[];
         links: {
-            name: string;
+            texto: string;
             link: string;
         }[];
     };
 }
 
 export default function Footer({ content }: FooterProps) {
-    const { text, contactDetails, links } = content;
+    const { texto, contactDetails, links } = content;
 
     return (
         <footer className="bg-gray-50 text-gray-700 pt-6">
@@ -35,7 +35,7 @@ export default function Footer({ content }: FooterProps) {
                                     duration={500}
                                     className="text-sm text-gray-600 hover:text-gray-900 cursor-pointer"
                                 >
-                                    {link.name}
+                                    {link.texto}
                                 </ScrollLink>
                             </li>
                         ))}
@@ -52,7 +52,7 @@ export default function Footer({ content }: FooterProps) {
                                     {item.icon}
                                 </div>
                                 <p className="text-sm text-gray-600 hover:text-gray-900">
-                                    {item.text}
+                                    {item.texto}
                                 </p>
                             </div>
                         ))}
@@ -60,7 +60,9 @@ export default function Footer({ content }: FooterProps) {
                 </div>
             </div>
             <div className="w-full p-4 text-center bg-gray-100">
-                <p className="text-sm p-4 font-regular text-gray-500">{text}</p>
+                <p className="text-sm p-4 font-regular text-gray-500">
+                    {texto}
+                </p>
             </div>
         </footer>
     );
