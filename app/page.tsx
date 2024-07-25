@@ -6,13 +6,13 @@ import Servicios from './pages/Servicios';
 import Staff from './pages/Staff';
 import Contacto from './pages/Contacto';
 // HERO
-import hero1 from './assets/hero1.jpg';
-import hero2 from './assets/hero2.jpg';
-import hero3 from './assets/hero3.jpg';
+import hero1 from './assets/hero/hero1.jpg';
+import hero2 from './assets/hero/hero2.jpg';
+import hero3 from './assets/hero/hero3.jpg';
 // NOSOTROS
-import container from './assets/containers.jpg';
-import plane from './assets/plane.jpg';
-import software from './assets/software.jpg';
+import container from './assets/nosotros/containers.jpg';
+import plane from './assets/nosotros/plane.jpg';
+import software from './assets/nosotros/software.jpg';
 // STAFF
 import emiliano from './assets/emiliano.jpg';
 // SERVICIO
