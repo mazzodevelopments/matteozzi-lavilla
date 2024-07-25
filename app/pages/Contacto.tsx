@@ -5,10 +5,10 @@ import emailjs from 'emailjs-com';
 import Input from '../components/Input';
 
 interface ContactState {
-    name: string;
+    nombre: string;
     email: string;
-    phone: string;
-    message: string;
+    telefono: string;
+    mensaje: string;
 }
 
 const buttonMotionConfig = {
@@ -23,10 +23,10 @@ const buttonMotionConfig = {
 
 export default function Contacto() {
     const [formData, setFormData] = useState<ContactState>({
-        name: '',
+        nombre: '',
         email: '',
-        phone: '',
-        message: ''
+        telefono: '',
+        mensaje: ''
     });
 
     const [response, setResponse] = useState<string | null>(null);
@@ -62,11 +62,11 @@ export default function Contacto() {
         const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
 
         const templateParams = {
-            from_name: formData.name,
+            from_name: formData.nombre,
             from_email: formData.email,
             to_name: 'Matteozzi Lavilla',
-            phone: formData.phone,
-            message: formData.message
+            phone: formData.telefono,
+            message: formData.mensaje
         };
 
         emailjs.send(serviceId, templateId, templateParams, publicKey).then(
@@ -74,10 +74,10 @@ export default function Contacto() {
                 console.log('SUCCESS!', response);
                 setResponse('¡Mensaje enviado!');
                 setFormData({
-                    name: '',
+                    nombre: '',
                     email: '',
-                    phone: '',
-                    message: ''
+                    telefono: '',
+                    mensaje: ''
                 });
                 setTimeout(() => {
                     setResponse(null);
@@ -103,7 +103,7 @@ export default function Contacto() {
                     <h1 className="text-5xl font-bold mb-4">
                         ¿Todavía con dudas?
                     </h1>
-                    <h1 className="text-5xl md:text-4xl font-semibold mb-4 text-gray-100">
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 text-gray-100">
                         Escribínos y recibí toda la información
                     </h1>
                     <p className="text-lg md:text-xl">
@@ -114,13 +114,13 @@ export default function Contacto() {
 
                 {/* Tercer tercio: formulario */}
                 <div className="w-full lg:w-1/3 flex justify-center items-center">
-                    <div className="w-full max-w-lg">
+                    <div className="w-full">
                         <form onSubmit={(e) => e.preventDefault()}>
                             <Input
                                 label="Nombre"
                                 type="text"
                                 name="name"
-                                value={formData.name}
+                                value={formData.nombre}
                                 onChange={handleChange}
                                 error={errors.name}
                             />
@@ -140,7 +140,7 @@ export default function Contacto() {
                                         label="Teléfono"
                                         type="tel"
                                         name="phone"
-                                        value={formData.phone}
+                                        value={formData.telefono}
                                         onChange={handleChange}
                                         error={errors.phone}
                                     />
@@ -150,7 +150,7 @@ export default function Contacto() {
                                 label="Mensaje"
                                 type="text"
                                 name="message"
-                                value={formData.message}
+                                value={formData.mensaje}
                                 onChange={handleChange}
                                 error={errors.message}
                                 isTextarea
