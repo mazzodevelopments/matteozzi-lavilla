@@ -56,6 +56,27 @@ const info = {
         'Podés contar con Matteozzi-Lavilla como colaborador de tus operaciones de Comercio Internacional. Te brindamos:'
 };
 
+const servicios = [
+    {
+        titulo: 'Despachante de Aduana',
+        descripcion:
+            'Ofrecemos servicios en despachos de importación, permisos de embarque, importaciones y exportaciones temporales, actividades bancarias, obtención de regímenes especiales, gestiones ante organismos oficiales, permisos de embarque para exportación, y asesoramiento en el área bancaria.',
+        icono: <GiCommercialAirplane />
+    },
+    {
+        titulo: 'Agentes de Transporte Aduanero',
+        descripcion:
+            'Ofrecemos servicios de Agente de Transporte Aduanero: trasbordos, seguros y fletes nacionales e internacionales, tránsitos terrestres y aéreos, reembarcos, permisos de transporte, y coordinación de embarques. También brindamos atención personalizada, confección de documentos de carga, gestión de vuelos internacionales en el Aeropuerto de S.C. de Bariloche, logística internacional multimodal y servicios de estiba.',
+        icono: <GiTruck />
+    },
+    {
+        titulo: 'Consultoría en Comercio Internacional',
+        descripcion:
+            'Ofrecemos asesoría integral en comercio internacional, incluyendo análisis de costos, documentación, medios de pago, y asesoría legal aduanera. También gestionamos inscripciones para importadores y exportadores, y brindamos apoyo en regímenes promocionales y clasificaciones arancelarias.',
+        icono: <GiWorld />
+    }
+];
+
 const nosotros = [
     {
         title: 'Quienes Somos?',
@@ -102,27 +123,6 @@ const staff = [
         rol: 'CEO',
         nombreCompleto: 'Emiliano Matteozzi',
         foto: emiliano.src
-    }
-];
-
-const servicios = [
-    {
-        title: 'Despachante de Aduana',
-        description:
-            'Ofrecemos servicios en despachos de importación, permisos de embarque, importaciones y exportaciones temporales, actividades bancarias, obtención de regímenes especiales, gestiones ante organismos oficiales, permisos de embarque para exportación, y asesoramiento en el área bancaria.',
-        icon: <GiCommercialAirplane />
-    },
-    {
-        title: 'Agentes de Transporte Aduanero',
-        description:
-            'Ofrecemos servicios de Agente de Transporte Aduanero: trasbordos, seguros y fletes nacionales e internacionales, tránsitos terrestres y aéreos, reembarcos, permisos de transporte, y coordinación de embarques. También brindamos atención personalizada, confección de documentos de carga, gestión de vuelos internacionales en el Aeropuerto de S.C. de Bariloche, logística internacional multimodal y servicios de estiba.',
-        icon: <GiTruck />
-    },
-    {
-        title: 'Consultoría en Comercio Internacional',
-        description:
-            'Ofrecemos asesoría integral en comercio internacional, incluyendo análisis de costos, documentación, medios de pago, y asesoría legal aduanera. También gestionamos inscripciones para importadores y exportadores, y brindamos apoyo en regímenes promocionales y clasificaciones arancelarias.',
-        icon: <GiWorld />
     }
 ];
 

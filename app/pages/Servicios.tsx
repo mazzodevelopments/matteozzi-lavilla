@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 interface Servicio {
-    title: string;
-    description: string;
-    icon: JSX.Element;
+    titulo: string;
+    descripcion: string;
+    icono: JSX.Element;
 }
 
 interface ServiciosProps {
@@ -25,10 +25,12 @@ export default function Servicios({ content }: ServiciosProps) {
             onMouseLeave={() => setHoveredIndex(null)}
         >
             <div className="bg-blue-600 text-white font-bold rounded-full py-2 px-4 mb-3">
-                {item.icon}
+                {item.icono}
             </div>
-            <h2 className="text-xl md:text-2xl font-bold mb-2">{item.title}</h2>
-            <p className="text-gray-600 text-md">{item.description}</p>
+            <h2 className="text-xl md:text-2xl font-bold mb-2">
+                {item.titulo}
+            </h2>
+            <p className="text-gray-600 text-md">{item.descripcion}</p>
         </motion.div>
     ));
 
