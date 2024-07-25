@@ -124,7 +124,7 @@ export default function Contacto() {
                                 onChange={handleChange}
                                 error={errors.name}
                             />
-                            <div className="flex flex-col md:flex-row md:space-x-4">
+                            <div className="flex flex-col md:flex-row md:space-x-3">
                                 <div className="w-full md:w-1/2 mb-4 md:mb-0">
                                     <Input
                                         label="Mail"
