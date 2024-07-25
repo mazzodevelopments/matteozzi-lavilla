@@ -4,14 +4,14 @@ import { FlipWords } from '../components/ui/flip-words';
 
 interface InfoProps {
     content: {
-        words: string[];
-        phrase: string;
-        paragraph: string;
+        palabras: string[];
+        frase: string;
+        texto: string;
     };
 }
 
 export default function Info({ content }: InfoProps) {
-    const { words, phrase, paragraph } = content;
+    const { palabras, frase, texto } = content;
 
     return (
         <section
@@ -20,17 +20,17 @@ export default function Info({ content }: InfoProps) {
         >
             <div className="text-center mb-12 w-full max-w-6xl relative z-10">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
-                    {phrase}
+                    {frase}
                 </h1>
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-500 font-medium max-w-3xl mx-auto">
-                    {paragraph}
+                <p className="text-sm sm:text-md md:text-lg lg:text-xl text-gray-500 font-medium max-w-3xl mx-auto">
+                    {texto}
                 </p>
             </div>
 
             <div className="flex justify-center items-center w-full relative z-10">
                 <FlipWords
-                    words={words}
-                    className="font-bold text-5xl sm:text-6xl md:text-7xl text-blue-600"
+                    words={palabras}
+                    className="font-bold text-4xl sm:text-6xl md:text-7xl text-blue-600"
                 />
             </div>
         </section>

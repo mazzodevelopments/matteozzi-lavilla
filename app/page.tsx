@@ -44,16 +44,15 @@ const hero = {
 };
 
 const info = {
-    words: [
+    palabras: [
         'Profesionalidad',
         'Experiencia',
         'Confianza',
         'Fidelidad',
         'Estructura'
     ],
-    phrase: '¿Estás interesado en importar-exportar o deseas tener una mejor alternativa en su operativa de comercio exterior?',
-    paragraph:
-        'Podés contar con Matteozzi-Lavilla como colaborador de tus operaciones de Comercio Internacional. Te brindamos:'
+    frase: '¿Estás interesado en importar-exportar o deseas tener una mejor alternativa en su operativa de comercio exterior?',
+    texto: 'Podés contar con Matteozzi-Lavilla como colaborador de tus operaciones de Comercio Internacional. Te brindamos:'
 };
 
 const servicios = [
