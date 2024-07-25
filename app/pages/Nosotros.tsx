@@ -61,7 +61,7 @@ export default function About({ content }: NosotrosProps) {
                                 />
                             </div>
                             <div className="p-6 flex-1">
-                                <h2 className="text-lg md:text-xl font-bold mb-2 text-gray-800 dark:text-white">
+                                <h2 className="text-lg md:text-xl font-semibold mb-2 text-gray-800 dark:text-white">
                                     {item.titulo}
                                 </h2>
                                 <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-9">

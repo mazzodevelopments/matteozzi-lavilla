@@ -20,7 +20,7 @@ export default function Footer({ content }: FooterProps) {
     const { texto, contactDetails, links } = content;
 
     return (
-        <footer className="bg-gray-50 text-gray-700 pt-6">
+        <footer className="bg-gray-50 text-gray-700">
             <div className="container mx-auto flex flex-col lg:flex-row justify-start items-start p-6">
                 <div className="p-4">
                     <h2 className="text-lg font-semibold text-black mb-4">

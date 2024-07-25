@@ -29,7 +29,7 @@ const links = [
         link: 'nosotros'
     },
     {
-        texto: 'Staff',
+        texto: 'Equipo',
         link: 'staff'
     },
     {
@@ -149,7 +149,7 @@ export default function Home() {
             <Info content={info} />
             <Servicios content={servicios} />
             <Nosotros content={nosotros} />
-            <Staff content={staff} />
+            {/* <Staff content={staff} /> */}
             <Contacto />
             <Footer content={footer} />
         </div>
