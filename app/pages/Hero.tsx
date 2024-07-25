@@ -69,7 +69,7 @@ export default function Hero({ content }: HeroProps) {
                             to="contacto"
                             smooth={true}
                             duration={500}
-                            className="inline-block mx-auto px-6 py-2 rounded-full bg-blue-600 text-white font-medium shadow-[0_4px_14px_0_rgb(0,118,255,25%)] hover:shadow-[0_6px_20px_rgba(0,118,255,50%)] hover:bg-blue-700 transition duration-200 ease-linear cursor-pointer"
+                            className="inline-block mx-auto px-6 py-2 rounded-full bg-blue-600 text-gray-200 font-medium shadow-[0_4px_14px_0_rgb(0,118,255,25%)] hover:shadow-[0_6px_20px_rgba(0,118,255,50%)] hover:bg-blue-700 transition duration-200 ease-linear cursor-pointer"
                         >
                             Contáctanos
                         </ScrollLink>
