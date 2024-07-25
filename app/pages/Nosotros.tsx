@@ -4,9 +4,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
 interface NosotrosItem {
-    title: string;
-    description: string;
-    photo: string;
+    titulo: string;
+    descripcion: string;
+    foto: string;
 }
 
 interface NosotrosProps {
@@ -33,37 +33,39 @@ export default function About({ content }: NosotrosProps) {
     }, []);
 
     return (
-        <section id="nosotros" className="min-h-screen mb-16 ">
-            <div className="max-w-6xl mx-auto pt-16 pb-16 px-6">
+        <section id="nosotros" className="min-h-screen mb-16">
+            <div className="max-w-6xl mx-auto pt-16 pb-16 px-8">
                 <div className="mb-12 text-center">
-                    <p className="text-gray-600 text-md">Nosotros</p>
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white">
+                    <p className="text-sm sm:text-md md:text-lg text-gray-600">
+                        Nosotros
+                    </p>
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white">
                         ¿Quiénes somos?
                     </h1>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-left">
                     {content.map((item, index) => (
                         <motion.div
                             key={index}
                             whileHover={{ scale: 1.05 }}
-                            className="bg-gray-50 rounded-3xl shadow-lg flex flex-col"
+                            className="bg-gray-50 dark:bg-gray-800 rounded-3xl shadow-lg flex flex-col"
                             onClick={() => openModal(item)}
                         >
                             <div className="w-full h-60 relative rounded-t-2xl overflow-hidden">
                                 <Image
-                                    src={item.photo}
-                                    alt={item.title}
+                                    src={item.foto}
+                                    alt={item.titulo}
                                     layout="fill"
                                     objectFit="cover"
                                     className="rounded-t-2xl"
                                 />
                             </div>
                             <div className="p-6 flex-1">
-                                <h2 className="text-xl font-semibold mb-2 text-gray-800">
-                                    {item.title}
+                                <h2 className="text-lg md:text-xl font-bold mb-2 text-gray-800 dark:text-white">
+                                    {item.titulo}
                                 </h2>
-                                <p className="text-gray-600 text-sm line-clamp-9">
-                                    {item.description}
+                                <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-9">
+                                    {item.descripcion}
                                 </p>
                             </div>
                             <button
@@ -91,7 +93,7 @@ export default function About({ content }: NosotrosProps) {
                             onClick={closeModal}
                         >
                             <motion.div
-                                className="bg-white rounded-2xl overflow-hidden shadow-xl max-w-screen-lg w-full mx-4"
+                                className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-xl max-w-screen-lg w-full mx-4"
                                 initial={{ y: -50, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 exit={{ y: 50, opacity: 0 }}
@@ -99,19 +101,19 @@ export default function About({ content }: NosotrosProps) {
                             >
                                 <div className="relative w-full h-64 sm:h-80 md:h-96">
                                     <Image
-                                        src={selectedItem.photo}
-                                        alt={selectedItem.title}
+                                        src={selectedItem.foto}
+                                        alt={selectedItem.titulo}
                                         layout="fill"
                                         objectFit="cover"
                                         className="transition-transform duration-300 ease-in-out"
                                     />
                                 </div>
                                 <div className="p-4 sm:p-6">
-                                    <h2 className="text-xl sm:text-2xl font-bold mb-4 text-gray-900">
-                                        {selectedItem.title}
+                                    <h2 className="text-xl sm:text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+                                        {selectedItem.titulo}
                                     </h2>
-                                    <p className="text-gray-700 mb-4 text-sm sm:text-base overflow-auto">
-                                        {selectedItem.description}
+                                    <p className="text-gray-700 dark:text-gray-300 mb-4 text-sm sm:text-base overflow-auto">
+                                        {selectedItem.descripcion}
                                     </p>
                                     <button
                                         onClick={closeModal}

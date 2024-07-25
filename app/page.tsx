@@ -79,22 +79,22 @@ const servicios = [
 
 const nosotros = [
     {
-        title: 'Quienes Somos?',
-        description:
+        titulo: 'Quienes Somos?',
+        descripcion:
             'Somos una empresa integral en el ámbito del comercio internacional, ofreciendo servicios de consultoría, despacho de aduanas y transporte aduanero. Contamos con una estructura completa y ágil, personal experimentado, tecnología moderna y profundo conocimiento de las relaciones económicas internacionales. Somos un eslabón esencial en la economía moderna, proporcionando una colaboración indispensable para la industria y el comercio.',
-        photo: container.src
+        foto: container.src
     },
     {
-        title: 'Nuestra Estructura',
-        description:
+        titulo: 'Nuestra Estructura',
+        descripcion:
             'Ofrecemos una ubicación privilegiada en el corazón de San Carlos de Bariloche para nuestra oficina matriz. Contamos con una amplia red de servicios nacionales e internacionales y colaboramos con embarcadores para garantizar una cobertura completa. Nuestro sistema de información se actualiza constantemente, utilizando sistemas informáticos aduaneros y bases de datos de legislación. Contamos con un equipo de profesionales altamente capacitados en comercio exterior, listos para atender personalmente y ayudar a optimizar costos y ahorrar tiempo.',
-        photo: plane.src
+        foto: plane.src
     },
     {
-        title: 'Soporte Informático',
-        description:
+        titulo: 'Soporte Informático',
+        descripcion:
             'Nos esforzamos por brindar servicios de excelencia en comercio internacional, integrados con sistemas informáticos clave. Utilizamos herramientas modernas como el Sistema Informático María, TARIFAR, SINTIA - ALPHA 2000 y WORKOUT. Además, tenemos conectividad permanente a Internet de banda ancha para cumplir eficientemente con los requerimientos actuales.',
-        photo: software.src
+        foto: software.src
     }
 ];
 
