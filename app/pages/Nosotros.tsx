@@ -43,7 +43,7 @@ export default function About({ content }: NosotrosProps) {
                         ¿Quiénes somos?
                     </h1>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-left">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left">
                     {content.map((item, index) => (
                         <motion.div
                             key={index}
@@ -55,9 +55,11 @@ export default function About({ content }: NosotrosProps) {
                                 <Image
                                     src={item.foto}
                                     alt={item.titulo}
-                                    layout="fill"
-                                    objectFit="cover"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    style={{ objectFit: 'cover' }}
                                     className="rounded-t-2xl"
+                                    priority={index === 0}
                                 />
                             </div>
                             <div className="p-6 flex-1">
@@ -103,8 +105,9 @@ export default function About({ content }: NosotrosProps) {
                                     <Image
                                         src={selectedItem.foto}
                                         alt={selectedItem.titulo}
-                                        layout="fill"
-                                        objectFit="cover"
+                                        fill
+                                        sizes="100vw"
+                                        style={{ objectFit: 'cover' }}
                                         className="transition-transform duration-300 ease-in-out"
                                     />
                                 </div>
