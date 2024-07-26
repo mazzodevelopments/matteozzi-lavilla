@@ -65,8 +65,8 @@ export default function Contacto() {
             from_name: formData.nombre,
             from_email: formData.email,
             to_name: 'Matteozzi Lavilla',
-            phone: formData.telefono,
-            message: formData.mensaje
+            from_phone: formData.telefono,
+            from_message: formData.mensaje
         };
 
         emailjs.send(serviceId, templateId, templateParams, publicKey).then(
@@ -119,10 +119,10 @@ export default function Contacto() {
                             <Input
                                 label="Nombre"
                                 type="text"
-                                name="name"
+                                name="nombre"
                                 value={formData.nombre}
                                 onChange={handleChange}
-                                error={errors.name}
+                                error={errors.nombre}
                             />
                             <div className="flex flex-col md:flex-row md:space-x-3">
                                 <div className="w-full md:w-1/2 mb-4 md:mb-0">
@@ -139,20 +139,20 @@ export default function Contacto() {
                                     <Input
                                         label="Teléfono"
                                         type="tel"
-                                        name="phone"
+                                        name="telefono"
                                         value={formData.telefono}
                                         onChange={handleChange}
-                                        error={errors.phone}
+                                        error={errors.telefono}
                                     />
                                 </div>
                             </div>
                             <Input
                                 label="Mensaje"
                                 type="text"
-                                name="message"
+                                name="mensaje"
                                 value={formData.mensaje}
                                 onChange={handleChange}
-                                error={errors.message}
+                                error={errors.mensaje}
                                 isTextarea
                             />
                             <div className="flex justify-center mt-4">
