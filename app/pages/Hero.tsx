@@ -53,13 +53,13 @@ export default function Hero({ content }: HeroProps) {
                         Matteozzi Lavilla
                     </h1>
                     <TextGenerateEffect
-                        className="max-w-2xl text-center font-medium text-white mix-blend-difference md:text-2xl mb-6"
+                        className="max-w-2xl text-center font-medium text-white mix-blend-difference md:text-2xl mb-4"
                         words="Simplificamos el comercio internacional a través de servicios aduaneros, logísticos y asesoría estratégica. Tu socio confiable para un éxito sin fronteras."
                     />
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: 'easeOut' }}
+                        transition={{ duration: 2, ease: 'easeOut' }}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                     >
