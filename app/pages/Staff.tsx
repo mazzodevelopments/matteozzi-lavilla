@@ -2,6 +2,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 interface StaffMember {
     rol: string;
@@ -13,60 +16,137 @@ interface StaffProps {
     content: StaffMember[];
 }
 
-export default function Staff({ content }: StaffProps) {
+function SampleNextArrow(props: any) {
+    const { onClick } = props;
     return (
-        <section
-            id="staff"
-            className="min-h-screen py-16 flex items-center justify-center"
+        <div
+            onClick={onClick}
+            className="absolute top-1/2 right-0 transform -translate-y-1/2 cursor-pointer text-gray-700 hover:text-gray-900 z-10"
         >
-            <div className="container mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-start lg:items-center">
-                {/* Contenedor de texto */}
-                <div className="lg:w-1/3 mb-10 lg:mb-0 lg:pr-8 text-center lg:text-left">
-                    <h1 className="text-2xl md:text-4xl lg:text-4xl font-bold text-black dark:text-white leading-relaxed lg:leading-snug mb-6">
-                        Nuestro Equipo
-                    </h1>
-                    <p className="text-lg text-gray-600 dark:text-gray-300">
-                        Conoce a los miembros de nuestro equipo, apasionados y
-                        dedicados a ofrecerte el mejor servicio. Cada uno de
-                        ellos aporta su experiencia y habilidades para lograr
-                        nuestros objetivos y brindar soluciones efectivas.
-                    </p>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-8 w-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2"
+            >
+                <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 5l7 7-7 7"
+                />
+            </svg>
+        </div>
+    );
+}
+
+function SamplePrevArrow(props: any) {
+    const { onClick } = props;
+    return (
+        <div
+            onClick={onClick}
+            className="absolute top-1/2 left-0 transform -translate-y-1/2 cursor-pointer text-gray-700 hover:text-gray-900 z-10"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-8 w-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2"
+            >
+                <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15 19l-7-7 7-7"
+                />
+            </svg>
+        </div>
+    );
+}
+
+export default function Staff({ content }: StaffProps) {
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />,
+        appendDots: (dots: any) => (
+            <div>
+                <ul className="flex justify-center space-x-2">{dots}</ul>
+            </div>
+        ),
+        customPaging: (i: any) => (
+            <div className="w-3 h-3 bg-gray-300 rounded-full cursor-pointer"></div>
+        )
+    };
+
+    const colors = ['bg-gray-50', 'bg-gray-100', 'bg-gray-200'];
+    const textPositions = ['text-center', 'text-left', 'text-right'];
+
+    return (
+        <section id="staff" className="py-16 min-h-screen">
+            <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div className="md:col-span-2 flex flex-col justify-center">
+                    <div className="text-center md:text-left">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-left mb-3 mt-6">
+                            Nuestro Equipo
+                        </h1>
+                        <p className="text-lg text-gray-500 text-left w-full max-w-2xl">
+                            Conoce a los miembros de nuestro equipo, apasionados
+                            y dedicados a ofrecerte el mejor servicio. Cada uno
+                            de ellos aporta su experiencia y habilidades para
+                            lograr nuestros objetivos y brindar soluciones
+                            efectivas.
+                        </p>
+                    </div>
                 </div>
 
-                {/* Contenedor de ítems */}
-                <div className="lg:w-2/3 flex flex-wrap justify-center gap-8">
-                    {content.map((member, index) => (
-                        <motion.div
-                            key={index}
-                            whileHover={{ scale: 1.05 }}
-                            className="relative w-48 h-48 flex flex-col items-center justify-center" // Tamaño reducido
-                        >
-                            <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-gray-100 hover:border-blue-500">
-                                <Image
-                                    src={member.foto}
-                                    alt={member.nombreCompleto}
-                                    layout="fill"
-                                    objectFit="cover"
-                                />
-                                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                    <div className="text-center text-white p-2">
-                                        {' '}
-                                        {/* Ajustado padding */}
-                                        <h2 className="text-sm font-semibold mb-1">
-                                            {' '}
-                                            {/* Tamaño de texto reducido */}
+                <div className="relative md:col-span-1">
+                    <Slider {...settings}>
+                        {content.map((member, index) => (
+                            <motion.div
+                                key={index}
+                                className="p-4"
+                                whileHover={{ scale: 1.05 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                <div
+                                    className={`${
+                                        colors[index % colors.length]
+                                    } rounded-3xl overflow-hidden h-96 transform transition duration-500 hover:shadow-xl`}
+                                >
+                                    <div className="relative w-full h-3/4">
+                                        <Image
+                                            src={member.foto}
+                                            alt={member.nombreCompleto}
+                                            layout="fill"
+                                            objectFit="cover"
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                    <div
+                                        className={`p-6 ${
+                                            textPositions[
+                                                index % textPositions.length
+                                            ]
+                                        }`}
+                                    >
+                                        <h2 className="text-xl font-bold text-gray-800 transition duration-500">
                                             {member.nombreCompleto}
                                         </h2>
-                                        <p className="text-xs">
-                                            {' '}
-                                            {/* Tamaño de texto reducido */}
+                                        <p className="text-gray-600 font-semibold">
                                             {member.rol}
                                         </p>
                                     </div>
                                 </div>
-                            </div>
-                        </motion.div>
-                    ))}
+                            </motion.div>
+                        ))}
+                    </Slider>
                 </div>
             </div>
         </section>
