@@ -34,12 +34,12 @@ export default function About({ content }: NosotrosProps) {
 
     return (
         <section id="nosotros" className="min-h-screen mb-16">
-            <div className="max-w-6xl mx-auto pt-16 pb-16 px-8">
+            <div className="max-w-6xl mx-auto pt-16 pb-32 px-8">
                 <div className="mb-12 text-center">
                     <p className="text-sm sm:text-md md:text-lg text-gray-600">
                         Nosotros
                     </p>
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900">
                         ¿Quiénes somos?
                     </h1>
                 </div>
@@ -48,10 +48,10 @@ export default function About({ content }: NosotrosProps) {
                         <motion.div
                             key={index}
                             whileHover={{ scale: 1.05 }}
-                            className="bg-gray-50 dark:bg-gray-800 rounded-3xl shadow-lg flex flex-col"
+                            className="flex flex-col bg-gray-100 rounded-3xl shadow-lg"
                             onClick={() => openModal(item)}
                         >
-                            <div className="w-full h-60 relative rounded-t-2xl overflow-hidden">
+                            <div className="relative w-full h-60 rounded-t-2xl overflow-hidden">
                                 <Image
                                     src={item.foto}
                                     alt={item.titulo}
@@ -62,17 +62,17 @@ export default function About({ content }: NosotrosProps) {
                                     priority={index === 0}
                                 />
                             </div>
-                            <div className="p-6 flex-1">
-                                <h2 className="text-lg md:text-xl font-semibold mb-2 text-gray-800 dark:text-white">
+                            <div className="flex-1 p-6">
+                                <h2 className="text-lg md:text-xl font-semibold mb-2">
                                     {item.titulo}
                                 </h2>
-                                <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-9">
+                                <p className="text-sm text-gray-500 line-clamp-9">
                                     {item.descripcion}
                                 </p>
                             </div>
                             <button
                                 onClick={() => openModal(item)}
-                                className="bg-blue-600 text-white py-3 rounded-b-2xl w-full hover:bg-blue-700 transition-colors duration-300"
+                                className="py-3 bg-blue-600 text-white rounded-b-2xl w-full hover:bg-blue-700 transition-colors duration-300"
                             >
                                 Conocer más
                             </button>
@@ -81,7 +81,6 @@ export default function About({ content }: NosotrosProps) {
                 </div>
             </div>
 
-            {/* MODAL */}
             <AnimatePresence>
                 {selectedItem && (
                     <motion.div
@@ -95,7 +94,7 @@ export default function About({ content }: NosotrosProps) {
                             onClick={closeModal}
                         >
                             <motion.div
-                                className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-xl max-w-screen-lg w-full mx-4"
+                                className="relative w-full max-w-screen-lg mx-4 bg-white rounded-2xl overflow-hidden shadow-xl"
                                 initial={{ y: -50, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 exit={{ y: 50, opacity: 0 }}
@@ -112,15 +111,15 @@ export default function About({ content }: NosotrosProps) {
                                     />
                                 </div>
                                 <div className="p-4 sm:p-6">
-                                    <h2 className="text-xl sm:text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+                                    <h2 className="mb-4 text-xl sm:text-2xl font-bold text-gray-900">
                                         {selectedItem.titulo}
                                     </h2>
-                                    <p className="text-gray-700 dark:text-gray-300 mb-4 text-sm sm:text-base overflow-auto">
+                                    <p className="mb-4 text-sm sm:text-base text-gray-700 overflow-auto">
                                         {selectedItem.descripcion}
                                     </p>
                                     <button
                                         onClick={closeModal}
-                                        className="bg-blue-600 text-white hover:bg-blue-700 px-6 py-3 rounded-lg transition-colors duration-300"
+                                        className="px-6 py-3 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-colors duration-300"
                                     >
                                         Cerrar
                                     </button>
