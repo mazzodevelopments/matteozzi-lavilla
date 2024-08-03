@@ -22,7 +22,7 @@ export default function Info({ content }: InfoProps) {
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mb-4">
                     {frase}
                 </h1>
-                <p className="text-sm sm:text-md md:text-lg lg:text-lg text-gray-500 font-medium max-w-2xl mx-auto">
+                <p className="text-sm sm:text-md md:text-lg text-gray-500 font-medium max-w-2xl mx-auto">
                     {texto}
                 </p>
             </div>

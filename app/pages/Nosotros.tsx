@@ -39,7 +39,7 @@ export default function About({ content }: NosotrosProps) {
                     <p className="text-sm sm:text-md md:text-lg text-gray-600">
                         Nosotros
                     </p>
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900">
+                    <h1 className="text-4xl sm:text-5xl md:text-5xl font-bold text-gray-900">
                         ¿Quiénes somos?
                     </h1>
                 </div>
@@ -63,10 +63,10 @@ export default function About({ content }: NosotrosProps) {
                                 />
                             </div>
                             <div className="flex-1 p-6">
-                                <h2 className="text-lg md:text-xl font-semibold mb-2">
+                                <h2 className="text-xl font-semibold mb-2">
                                     {item.titulo}
                                 </h2>
-                                <p className="text-sm text-gray-500 line-clamp-9">
+                                <p className="text-sm sm:text-md md:text-md lg:text-md text-gray-500 line-clamp-9">
                                     {item.descripcion}
                                 </p>
                             </div>

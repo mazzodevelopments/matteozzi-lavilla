@@ -60,9 +60,7 @@ export default function Footer({ content }: FooterProps) {
                 </div>
             </div>
             <div className="w-full p-4 text-center bg-gray-100">
-                <p className="text-sm p-4 font-regular text-gray-500">
-                    {texto}
-                </p>
+                <p className="text-sm font-regular text-gray-500">{texto}</p>
             </div>
         </footer>
     );
