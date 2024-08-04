@@ -27,7 +27,7 @@ export default function Servicios({ content }: ServiciosProps) {
                 {content.map((item, idx) => (
                     <motion.div
                         key={idx}
-                        className="flex flex-col items-start mb-4 p-4  hover:text-blue-600"
+                        className="flex flex-col items-start mb-4 p-4"
                         whileHover={{ scale: 1.025, y: -5 }}
                     >
                         <div className="bg-blue-600 text-white font-bold rounded-full py-2 px-4 mb-3">
