@@ -46,31 +46,30 @@ export default function Staff({ content }: StaffProps) {
                 {/* Imágenes en la mitad derecha */}
                 <div className="flex flex-col items-center w-full md:w-1/2 p-4">
                     <div className="flex justify-center items-end space-x-4">
-                        <Image
-                            src={primarios[0].imagen}
-                            alt={primarios[0].nombre + ' ' + primarios[0].rol}
-                            width={150}
-                            height={250}
-                            className="h-64 object-cover rounded-3xl shadow-lg"
-                        />
-                        <div className="relative flex flex-col items-center transform -translate-y-6">
-                            <Image
-                                src={primarios[1].imagen}
-                                alt={
-                                    primarios[1].nombre + ' ' + primarios[1].rol
-                                }
-                                width={150}
-                                height={250}
-                                className="h-64 object-cover rounded-3xl shadow-lg"
-                            />
-                        </div>
-                        <Image
-                            src={primarios[2].imagen}
-                            alt={primarios[2].nombre + ' ' + primarios[2].rol}
-                            width={150}
-                            height={250}
-                            className="h-64 object-cover rounded-3xl shadow-lg"
-                        />
+                        {primarios.map((person, index) => (
+                            <div
+                                key={index}
+                                className={`relative group ${
+                                    index === 1
+                                        ? 'transform -translate-y-6'
+                                        : ''
+                                }`}
+                            >
+                                <Image
+                                    src={person.imagen}
+                                    alt={`${person.nombre} ${person.rol}`}
+                                    width={200}
+                                    height={250}
+                                    className="h-64 object-cover rounded-3xl shadow-lg"
+                                />
+                                <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white bg-black bg-opacity-85 rounded-3xl">
+                                    <h3 className="text-base font-bold text-white">
+                                        {person.nombre}
+                                    </h3>
+                                    <p className="text-sm">{person.rol}</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                     <div className="w-full flex justify-center">
                         <AnimatedTooltip items={secundarios} />
