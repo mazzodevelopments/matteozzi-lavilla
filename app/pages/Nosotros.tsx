@@ -34,7 +34,7 @@ export default function About({ content }: NosotrosProps) {
 
     return (
         <section id="nosotros" className="min-h-screen">
-            <div className="max-w-6xl mx-auto pt-16 pb-32 px-8">
+            <div className="max-w-6xl mx-auto pt-16 pb-8 px-8">
                 <div className="mb-12 text-center">
                     <p className="text-sm sm:text-md md:text-lg text-gray-600">
                         Nosotros
