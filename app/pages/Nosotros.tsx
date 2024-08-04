@@ -62,7 +62,7 @@ export default function About({ content }: NosotrosProps) {
                                     priority={index === 0}
                                 />
                             </div>
-                            <div className="flex-1 p-6">
+                            <div className="flex-1 px-10 py-4">
                                 <h2 className="text-xl font-semibold mb-2">
                                     {item.titulo}
                                 </h2>
