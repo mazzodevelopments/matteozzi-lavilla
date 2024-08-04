@@ -60,7 +60,7 @@ export default function Staff({ content }: StaffProps) {
                                     alt={`${person.nombre} ${person.rol}`}
                                     width={200}
                                     height={250}
-                                    className="h-64 object-cover rounded-3xl shadow-lg"
+                                    className="h-40 sm:h-64 md:h-64 lg:h-64 object-cover rounded-3xl shadow-lg"
                                 />
                                 <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white bg-black bg-opacity-85 rounded-3xl">
                                     <h3 className="text-base font-bold text-white">
