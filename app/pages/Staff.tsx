@@ -33,7 +33,7 @@ export default function Staff({ content }: StaffProps) {
                     <h2 className="text-4xl sm:text-5xl md:text-5xl font-bold mb-3">
                         Nuestro Staff
                     </h2>
-                    <p className="text-sm sm:text-md md:text-lg text-gray-500 mb-6">
+                    <p className="text-sm sm:text-md md:text-lg text-gray-500 mb-10">
                         {parrafo}
                     </p>
                     <a
