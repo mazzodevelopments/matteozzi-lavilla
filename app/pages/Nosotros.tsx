@@ -35,7 +35,7 @@ export default function About({ content }: NosotrosProps) {
     return (
         <section id="nosotros" className="min-h-screen">
             <div className="max-w-6xl mx-auto pt-16 pb-8 px-8">
-                <div className="mb-12 text-center">
+                <div className="mb-6 text-center">
                     <p className="text-sm sm:text-md md:text-lg text-gray-600">
                         Nosotros
                     </p>
@@ -48,21 +48,21 @@ export default function About({ content }: NosotrosProps) {
                         <motion.div
                             key={index}
                             whileHover={{ scale: 1.05 }}
-                            className="flex flex-col bg-gray-100 rounded-3xl shadow-lg"
+                            className="block bg-gray-100 rounded-3xl shadow-lg"
                             onClick={() => openModal(item)}
                         >
-                            <div className="relative w-full h-60 rounded-t-2xl overflow-hidden">
+                            <div className="relative w-full h-60 rounded-t-3xl overflow-hidden">
                                 <Image
                                     src={item.foto}
                                     alt={item.titulo}
                                     fill
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     style={{ objectFit: 'cover' }}
-                                    className="rounded-t-2xl"
+                                    className="rounded-t-3xl"
                                     priority={index === 0}
                                 />
                             </div>
-                            <div className="flex-1 px-6 py-4">
+                            <div className="p-6">
                                 <h2 className="text-xl font-semibold mb-2">
                                     {item.titulo}
                                 </h2>
@@ -94,7 +94,7 @@ export default function About({ content }: NosotrosProps) {
                             onClick={closeModal}
                         >
                             <motion.div
-                                className="relative w-full max-w-screen-lg mx-4 bg-white rounded-2xl overflow-hidden shadow-xl"
+                                className="relative w-full max-w-screen-lg mx-4 bg-gray-100 rounded-3xl overflow-hidden shadow-xl"
                                 initial={{ y: -50, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 exit={{ y: 50, opacity: 0 }}
@@ -119,7 +119,7 @@ export default function About({ content }: NosotrosProps) {
                                     </p>
                                     <button
                                         onClick={closeModal}
-                                        className="px-6 py-3 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-colors duration-300"
+                                        className="text-sm px-6 py-3 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-colors duration-300"
                                     >
                                         Cerrar
                                     </button>
