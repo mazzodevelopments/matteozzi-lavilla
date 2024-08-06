@@ -26,7 +26,7 @@ export default function Staff({ content }: StaffProps) {
     return (
         <section
             id="staff"
-            className="flex justify-center items-center w-full max-w-6xl p-4 min-h-screen mx-auto"
+            className="flex justify-center items-center w-full max-w-6xl py-4 min-h-screen mx-auto"
         >
             <div className="flex flex-col md:flex-row w-full items-center">
                 {/* Texto en la mitad izquierda */}
