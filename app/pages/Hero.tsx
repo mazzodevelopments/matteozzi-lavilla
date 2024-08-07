@@ -48,7 +48,7 @@ export default function Hero({ content }: HeroProps) {
                 </div>
             </nav>
             <div className="flex flex-col absolute inset-0 items-center justify-center">
-                <div className="flex flex-col items-center gap-3">
+                <div className="flex flex-col items-center gap-2">
                     <h1 className="text-center text-4xl sm:text-6xl md:text-8xl font-bold text-white mix-blend-difference">
                         Matteozzi Lavilla
                     </h1>
