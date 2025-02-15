@@ -94,18 +94,14 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="w-full lg:w-[40%] flex flex-row justify-start items-center gap-4 sm:gap-6 lg:gap-10">
+        <div className="w-full lg:w-[50%] flex flex-row justify-start items-center gap-4 sm:gap-6 lg:gap-10">
           <Image
-            src="/logo.png"
+            src="/logoCompleto.png"
             alt="logo"
             width={500}
             height={500}
-            className="w-20 h-20 sm:w-24 sm:h-24 lg:w-40 lg:h-40"
+            className="w-full"
           />
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-none mb-2">
-            Matteozzi <br />
-            Lavilla
-          </h2>
         </div>
       </div>
       <div className="flex flex-col sm:flex-row w-[90%] sm:w-[80%] px-5 sm:px-10 py-5 sm:py-10 justify-between items-center">
