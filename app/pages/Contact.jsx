@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import emailjs from 'emailjs-com';
-import SectionContainer from '../components/SectionContainter';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
+import SectionContainer from "../components/SectionContainter";
 
 const buttonMotionConfig = {
   whileHover: {
-    transition: { duration: 0.1 }
+    transition: { duration: 0.1 },
   },
   whileTap: {
-    scale: 0.95
-  }
+    scale: 0.95,
+  },
 };
 
 const contactInfo = [
@@ -32,7 +32,7 @@ const contactInfo = [
         />
       </svg>
     ),
-    text: '+54 2944 422066'
+    text: "+54 2944 422066",
   },
   {
     icon: (
@@ -51,7 +51,7 @@ const contactInfo = [
         />
       </svg>
     ),
-    text: 'info@matteozzi-lavilla.com.ar'
+    text: "info@matteozzi-lavilla.com.ar",
   },
   {
     icon: (
@@ -76,16 +76,16 @@ const contactInfo = [
         />
       </svg>
     ),
-    text: 'Mitre 125, 1er Piso, Oficinas 124-125, San Carlos de Bariloche'
-  }
+    text: "Mitre 125, 1er Piso, Oficinas 124-125-126, San Carlos de Bariloche",
+  },
 ];
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    nombre: '',
-    email: '',
-    telefono: '',
-    mensaje: ''
+    nombre: "",
+    email: "",
+    telefono: "",
+    mensaje: "",
   });
 
   const [response, setResponse] = useState(null);
@@ -94,7 +94,7 @@ export default function Contact() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({ ...prevState, [name]: value }));
-    setErrors((prevErrors) => ({ ...prevErrors, [name]: '' }));
+    setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
   };
 
   const handleSubmit = (e) => {
@@ -102,8 +102,8 @@ export default function Contact() {
 
     const newErrors = {};
     Object.entries(formData).forEach(([key, value]) => {
-      if (value.trim() === '') {
-        newErrors[key] = '*Obligatorio';
+      if (value.trim() === "") {
+        newErrors[key] = "*Obligatorio";
       }
     });
 
@@ -119,28 +119,28 @@ export default function Contact() {
     const templateParams = {
       from_name: formData.nombre,
       from_email: formData.email,
-      to_name: 'Matteozzi Lavilla',
+      to_name: "Matteozzi Lavilla",
       from_phone: formData.telefono,
-      from_message: formData.mensaje
+      from_message: formData.mensaje,
     };
 
     emailjs.send(serviceId, templateId, templateParams, publicKey).then(
       (response) => {
-        console.log('SUCCESS!', response);
-        setResponse('¡Mensaje enviado!');
+        console.log("SUCCESS!", response);
+        setResponse("¡Mensaje enviado!");
         setFormData({
-          nombre: '',
-          email: '',
-          telefono: '',
-          mensaje: ''
+          nombre: "",
+          email: "",
+          telefono: "",
+          mensaje: "",
         });
         setTimeout(() => {
           setResponse(null);
         }, 2000);
       },
       (error) => {
-        console.log('FAILED...', error.text);
-      }
+        console.log("FAILED...", error.text);
+      },
     );
   };
 
@@ -156,10 +156,9 @@ export default function Contact() {
             Te leemos
           </h1>
           <p className="text-sm lg:text-[0.9vw] text-gray-600 mb-8 w-[90%]">
-            Nuestros horarios de atención son 24/7 por lo que responderemos a
-            tus inquietudes de inmediato. Estamos aquí para ayudarte con
-            cualquier consulta sobre comercio internacional, despacho de aduanas
-            o transporte aduanero.
+            Respondemos a tus inquietudes a la brevedad. Estamos aquí para
+            ayudarte con cualquier consulta sobre comercio internacional, aduana
+            o transporte internacional.
           </p>
           <div className="w-[80%] space-y-4">
             {contactInfo.map((info, index) => (

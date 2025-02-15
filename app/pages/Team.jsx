@@ -1,24 +1,24 @@
-import { useEffect } from 'react';
-import SectionContainer from '../components/SectionContainter';
+import { useEffect } from "react";
+import SectionContainer from "../components/SectionContainter";
 
 export default function Team() {
   useEffect(() => {
     const updateScrollSpeed = () => {
       const viewportWidth = window.innerWidth;
-      const elements = document.querySelectorAll('.team');
+      const elements = document.querySelectorAll(".team");
 
       elements.forEach((element) => {
         if (viewportWidth < 1024) {
-          element.setAttribute('data-scroll-speed', '0');
+          element.setAttribute("data-scroll-speed", "0");
         }
       });
     };
 
     updateScrollSpeed();
-    window.addEventListener('resize', updateScrollSpeed);
+    window.addEventListener("resize", updateScrollSpeed);
 
     return () => {
-      window.removeEventListener('resize', updateScrollSpeed);
+      window.removeEventListener("resize", updateScrollSpeed);
     };
   }, []);
 
@@ -48,7 +48,7 @@ export default function Team() {
                 className="absolute z-20 bottom-0 left-1/2 transform -translate-x-1/2 w-[400px] h-[400px] rounded-xl object-cover"
               />
             </div>
-            <h3 className="text-xl font-bold mt-4">César Matteozzi</h3>
+            <h3 className="text-xl font-bold mt-4">César Amílcar Matteozzi</h3>
             <span className="text-sm sm:text-lg text-gray-600 mt-4 sm:mt-6 uppercase">
               Co-Fundador
             </span>
@@ -62,7 +62,7 @@ export default function Team() {
                 className="absolute z-20 bottom-0 left-1/2 transform -translate-x-1/2 w-[400px] h-[400px] rounded-xl object-cover"
               />
             </div>
-            <h3 className="text-xl font-bold mt-4">Emiliano Matteozzi</h3>
+            <h3 className="text-xl font-bold mt-4">Emiliano Mario Matteozzi</h3>
             <span className="text-sm sm:text-lg text-gray-600 mt-4 sm:mt-6 uppercase">
               Director
             </span>
@@ -76,7 +76,7 @@ export default function Team() {
                 className="absolute z-20 bottom-0 left-1/2 transform -translate-x-1/2 w-[400px] h-[400px] rounded-xl object-cover"
               />
             </div>
-            <h3 className="text-xl font-bold mt-4">Stella Lavilla</h3>
+            <h3 className="text-xl font-bold mt-4">Stella Maris Lavilla</h3>
             <span className="text-sm sm:text-lg text-gray-600 mt-4 sm:mt-6 uppercase">
               Co-Fundador
             </span>
