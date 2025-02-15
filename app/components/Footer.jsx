@@ -110,7 +110,7 @@ export default function Footer() {
       </div>
       <div className="flex flex-col sm:flex-row w-[90%] sm:w-[80%] px-5 sm:px-10 py-5 sm:py-10 justify-between items-center">
         <p className="text-sm sm:text-md text-gray-500 mb-2 sm:mb-0">
-          © 2024 Matteozzi Lavilla. All Rights Reserved
+          © 2025 Matteozzi Lavilla. All Rights Reserved
         </p>
         <p className="text-sm sm:text-md text-gray-500">Developed by Mazzo</p>
       </div>

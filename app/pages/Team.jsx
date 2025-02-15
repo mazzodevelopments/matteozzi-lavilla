@@ -32,8 +32,8 @@ export default function Team() {
           Nuestro Equipo
         </h1>
         <p className="text-sm lg:text-[0.9vw] text-gray-600 mt-4 sm:mt-6">
-          Conformado por profesionales altamente capacitados y comprometidos con
-          la innovación y el éxito de cada proyecto.
+          Conformado por un staff de profesionales altamente capacitados y
+          comprometidos con la innovación y el éxito de cada proyecto.
         </p>
       </div>
 
