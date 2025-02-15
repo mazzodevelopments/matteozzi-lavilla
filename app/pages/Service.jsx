@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import { GiCommercialAirplane, GiTruck, GiWorld } from 'react-icons/gi';
-import { useLocomotiveScroll } from 'react-locomotive-scroll';
-import SectionContainer from '../components/SectionContainter';
+import React, { useEffect } from "react";
+import { GiCommercialAirplane, GiTruck, GiWorld } from "react-icons/gi";
+import { useLocomotiveScroll } from "react-locomotive-scroll";
+import SectionContainer from "../components/SectionContainter";
 
 export default function Service() {
   const { scroll } = useLocomotiveScroll();
@@ -9,10 +9,10 @@ export default function Service() {
   const handleContactClick = (e) => {
     e.preventDefault();
     if (scroll) {
-      scroll.scrollTo('#contact', {
+      scroll.scrollTo("#contact", {
         offset: 0,
         duration: 1000,
-        easing: [0.25, 0.0, 0.35, 1.0]
+        easing: [0.25, 0.0, 0.35, 1.0],
       });
     }
   };
@@ -20,20 +20,20 @@ export default function Service() {
   useEffect(() => {
     const updateScrollSpeed = () => {
       const viewportWidth = window.innerWidth;
-      const elements = document.querySelectorAll('.service');
+      const elements = document.querySelectorAll(".service");
 
       elements.forEach((element) => {
         if (viewportWidth < 1024) {
-          element.setAttribute('data-scroll-speed', '0');
+          element.setAttribute("data-scroll-speed", "0");
         }
       });
     };
 
     updateScrollSpeed();
-    window.addEventListener('resize', updateScrollSpeed);
+    window.addEventListener("resize", updateScrollSpeed);
 
     return () => {
-      window.removeEventListener('resize', updateScrollSpeed);
+      window.removeEventListener("resize", updateScrollSpeed);
     };
   }, []);
 
@@ -48,8 +48,9 @@ export default function Service() {
         </h1>
         <p className="text-sm lg:text-[0.9vw] text-gray-600 mt-4 sm:mt-4 md:w-[80%] lg:w-[60%]">
           Descubre nuestra amplia gama de servicios diseñados para satisfacer
-          tus necesidades de transporte y logística. Desde soluciones aéreas
-          hasta terrestres, estamos aquí para ayudarte.
+          tus necesidades de importación y/o exportación y aquellas relacionadas
+          con la logística y el transporte internacional. Desde soluciones
+          aéreas hasta terrestres, estamos aquí para ayudarte.
         </p>
       </div>
       <div className="flex flex-col items-center justify-center mt-6 lg:mt-10">
@@ -74,9 +75,8 @@ export default function Service() {
                 Ofrecemos servicios especializados en despachos de importación,
                 permisos de embarque, importaciones y exportaciones temporales,
                 gestiones ante organismos oficiales, asesoramiento en el área
-                bancaria, y obtención de regímenes especiales. También nos
-                encargamos de permisos de embarque para exportación,
-                garantizando un proceso ágil y eficiente.
+                bancaria, y obtención de regímenes especiales, garantizando un
+                proceso ágil y eficiente.
               </p>
             </div>
             <button
@@ -100,11 +100,12 @@ export default function Service() {
                 Transporte Aduanero
               </h3>
               <p className="text-sm lg:text-[0.95vw] text-gray-600 flex-grow mt-2">
-                Como Agente de Transporte Aduanero, proporcionamos servicios de
-                trasbordo, seguros y fletes tanto nacionales como
-                internacionales, tránsitos terrestres y aéreos, reembarcos, y
-                permisos de transporte. Asimismo, coordinamos embarques para
-                asegurar una logística eficiente y sin contratiempos.
+                Ofrecemos servicios de Agente de Transporte Aduanero para los
+                medios de transporte aéreo, terrestre y marítimo, así como
+                multimodal. Gestionamos tránsitos, reembarcos, transbordos,
+                fletes y seguros internacionales. Asimismo, coordinamos
+                embarques para asegurar una logística eficiente y sin
+                contratiempos.
               </p>
             </div>
             <button
@@ -125,15 +126,14 @@ export default function Service() {
                 <GiWorld className="text-black text-xl" aria-hidden="true" />
               </div>
               <h3 className="lg:text-[1.65vw] sm:text-2xl font-bold leading-tight sm:leading-[1]">
-                Cobertura global
+                Asesoría Integral
               </h3>
               <p className="text-sm lg:text-[0.95vw] text-gray-600 flex-grow mt-2">
                 Ofrecemos asesoría integral en comercio internacional, abarcando
-                análisis de costos, documentación, medios de pago y asesoría
-                legal aduanera. También gestionamos inscripciones para
-                importadores y exportadores, brindamos apoyo en regímenes
-                promocionales, y realizamos clasificaciones arancelarias
-                precisas.
+                análisis de costos, documentación, clasificación arancelaria,
+                medios de pago y asesoría legal aduanera. También gestionamos
+                inscripciones para importadores y exportadores, brindamos apoyo
+                en regímenes promocionales
               </p>
             </div>
             <button
