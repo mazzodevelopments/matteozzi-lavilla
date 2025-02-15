@@ -1,36 +1,37 @@
-import Image from 'next/image';
-import { useEffect } from 'react';
+import Image from "next/image";
+import { useEffect } from "react";
+
 export default function About() {
   const items = [
     {
-      title: 'Estructura',
+      title: "Estructura",
       description:
-        'Ofrecemos una ubicación privilegiada en el corazón de San Carlos de Bariloche para nuestra oficina matriz. Contamos con una amplia red de servicios nacionales e internacionales y colaboramos con embarcadores para garantizar una cobertura completa.'
+        "Ofrecemos una ubicación privilegiada en el corazón de San Carlos de Bariloche para nuestra oficina matriz. Contamos con una amplia red de servicios nacionales e internacionales y colaboramos con embarcadores para garantizar una cobertura completa.",
     },
     {
-      title: 'Soporte Informático',
+      title: "Soporte Informático",
       description:
-        'Nos esforzamos por brindar servicios de excelencia en comercio internacional, integrados con sistemas informáticos clave. Utilizamos herramientas modernas como el Sistema Informático María, TARIFAR, SINTIA - ALPHA 2000 y WORKOUT. '
-    }
+        "Nos esforzamos por brindar servicios de excelencia en comercio internacional, integrados con sistemas informáticos clave. Utilizamos herramientas modernas como el Sistema Informático Malvina, TARIFAR, SINTIA - ALPHA 2000 y LAKAUT. ",
+    },
   ];
 
   useEffect(() => {
     const updateScrollSpeed = () => {
       const viewportWidth = window.innerWidth;
-      const elements = document.querySelectorAll('.about');
+      const elements = document.querySelectorAll(".about");
 
       elements.forEach((element) => {
         if (viewportWidth < 1024) {
-          element.setAttribute('data-scroll-speed', '0');
+          element.setAttribute("data-scroll-speed", "0");
         }
       });
     };
 
     updateScrollSpeed();
-    window.addEventListener('resize', updateScrollSpeed);
+    window.addEventListener("resize", updateScrollSpeed);
 
     return () => {
-      window.removeEventListener('resize', updateScrollSpeed);
+      window.removeEventListener("resize", updateScrollSpeed);
     };
   }, []);
 
@@ -55,10 +56,10 @@ export default function About() {
           </h1>
           <p className="text-sm sm:text-[0.9vw] text-gray-600 mt-4 sm:mt-6">
             Somos una empresa integral en el ámbito del comercio internacional,
-            ofreciendo servicios de consultoría, despacho de aduanas y
-            transporte aduanero. Contamos con una estructura completa y ágil,
-            personal experimentado, tecnología moderna y profundo conocimiento
-            de las relaciones económicas internacionales.
+            ofreciendo servicios de consultoría, despachante de aduanas y agente
+            de transporte. Contamos con una estructura completa y ágil, personal
+            experimentado, tecnología moderna y profundo conocimiento de las
+            relaciones económicas internacionales.
           </p>
         </div>
         {/* FOTO */}
