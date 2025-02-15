@@ -25,6 +25,7 @@ const clients = [
   { name: "Msc", src: "/clientes/msc.png" },
   { name: "Conae", src: "/clientes/conae.png" },
   { name: "Manila", src: "/clientes/manila.png" },
+  { name: "Manila2", src: "/clientes/manila.png" },
 ];
 
 export default function Partners() {
@@ -45,11 +46,11 @@ export default function Partners() {
           algunos de nuestros clientes más destacados.
         </p>
 
-        <div className="w-full sm:w-[85%] grid grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-4 my-8 sm:my-12 ">
+        <div className="w-full sm:w-[85%] flex flex-wrap justify-center gap-2 sm:gap-4 my-8 sm:my-12">
           {clients.map((client) => (
             <div
               key={client.name}
-              className="flex items-center justify-center bg-white border border-gray-300 rounded-xl p-2 sm:p-4 aspect-square"
+              className="flex items-center justify-center bg-white border border-gray-300 rounded-xl p-2 sm:p-4 aspect-square w-[calc(33.333%-8px)] sm:w-[calc(20%-16px)]"
             >
               <Image
                 className="invert opacity-90"
