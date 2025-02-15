@@ -1,24 +1,30 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import SectionContainer from '../components/SectionContainter';
+import Image from "next/image";
+import SectionContainer from "../components/SectionContainter";
 
 const clients = [
-  { name: 'Aerolineas', src: '/clientes/aerolineas.png' },
-  { name: 'Coto', src: '/clientes/coto.png' },
-  { name: 'CNEA', src: '/clientes/cnea.png' },
-  { name: 'Lan', src: '/clientes/lan.png' },
-  { name: 'Altec', src: '/clientes/altec.png' },
-  { name: 'Abc Cargas', src: '/clientes/abccargas.png' },
-  { name: 'Cruz del sur', src: '/clientes/cruzdelsur.png' },
-  { name: 'Arsat', src: '/clientes/arsat.png' },
-  { name: 'Llao Llao', src: '/clientes/llaollao.png' },
-  { name: 'Cencosud', src: '/clientes/cencosud.png' },
-  { name: 'Flybondi', src: '/clientes/flybondi.png' },
-  { name: 'Invap', src: '/clientes/invap.png' },
-  { name: 'Jet Smart', src: '/clientes/jetsmart.png' },
-  { name: 'Latam', src: '/clientes/latam.png' },
-  { name: 'YPF', src: '/clientes/ypf.png' }
+  { name: "Aerolineas", src: "/clientes/aerolineas.png" },
+  { name: "Coto", src: "/clientes/coto.png" },
+  { name: "CNEA", src: "/clientes/cnea.png" },
+  { name: "Sky", src: "/clientes/sky.png" },
+  { name: "Altec", src: "/clientes/altec.png" },
+  { name: "Newsan", src: "/clientes/newsan.png" },
+  { name: "Cruz del sur", src: "/clientes/cruzdelsur.png" },
+  { name: "Arsat", src: "/clientes/arsat.png" },
+  { name: "Llao Llao", src: "/clientes/llaollao.png" },
+  { name: "Cencosud", src: "/clientes/cencosud.png" },
+  { name: "Flybondi", src: "/clientes/flybondi.png" },
+  { name: "Invap", src: "/clientes/invap.png" },
+  { name: "Jet Smart", src: "/clientes/jetsmart.png" },
+  { name: "Latam", src: "/clientes/latam.png" },
+  { name: "YPF", src: "/clientes/ypf.png" },
+  { name: "Petroplastics", src: "/clientes/petroplastics.png" },
+  { name: "Franui", src: "/clientes/franui.png" },
+  { name: "Andes", src: "/clientes/andes.png" },
+  { name: "Msc", src: "/clientes/msc.png" },
+  { name: "Conae", src: "/clientes/conae.png" },
+  { name: "Manila", src: "/clientes/manila.png" },
 ];
 
 export default function Partners() {
@@ -52,9 +58,9 @@ export default function Partners() {
                 height={500}
                 alt={client.name}
                 style={{
-                  objectFit: 'contain',
-                  width: '100%',
-                  height: '100%'
+                  objectFit: "contain",
+                  width: "100%",
+                  height: "100%",
                 }}
               />
             </div>
