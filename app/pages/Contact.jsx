@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from "emailjs-com";
 import SectionContainer from "../components/SectionContainter";
 
 const buttonMotionConfig = {
@@ -86,23 +85,29 @@ export default function Contact() {
     email: "",
     telefono: "",
     mensaje: "",
+    attachment: null,
   });
 
   const [response, setResponse] = useState(null);
+  const [isErrorResponse, setIsErrorResponse] = useState(null);
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({ ...prevState, [name]: value }));
+    const { name, value, files } = e.target;
+    if (name === "attachment") {
+      setFormData((prevState) => ({ ...prevState, [name]: files[0] }));
+    } else {
+      setFormData((prevState) => ({ ...prevState, [name]: value }));
+    }
     setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newErrors = {};
     Object.entries(formData).forEach(([key, value]) => {
-      if (value.trim() === "") {
+      if (key !== "attachment" && value.trim() === "") {
         newErrors[key] = "*Obligatorio";
       }
     });
@@ -112,36 +117,38 @@ export default function Contact() {
       return;
     }
 
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+    const formDataToSend = new FormData();
+    Object.entries(formData).forEach(([key, value]) => {
+      formDataToSend.append(key, value);
+    });
 
-    const templateParams = {
-      from_name: formData.nombre,
-      from_email: formData.email,
-      to_name: "Matteozzi Lavilla",
-      from_phone: formData.telefono,
-      from_message: formData.mensaje,
-    };
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        body: formDataToSend,
+      });
 
-    emailjs.send(serviceId, templateId, templateParams, publicKey).then(
-      (response) => {
-        console.log("SUCCESS!", response);
+      if (response.ok) {
         setResponse("¡Mensaje enviado!");
+        setIsErrorResponse(false);
         setFormData({
           nombre: "",
           email: "",
           telefono: "",
           mensaje: "",
+          attachment: null,
         });
         setTimeout(() => {
           setResponse(null);
         }, 2000);
-      },
-      (error) => {
-        console.log("FAILED...", error.text);
-      },
-    );
+      } else {
+        throw new Error("Failed to send email");
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setResponse("Error al enviar el mensaje. Por favor, inténtelo de nuevo.");
+      setIsErrorResponse(true);
+    }
   };
 
   return (
@@ -266,7 +273,9 @@ export default function Contact() {
             </div>
           </form>
           {response && (
-            <p className="mt-4 text-sm text-green-600 font-semibold">
+            <p
+              className={`mt-4 text-sm ${isErrorResponse ? "text-red-500" : "text-green-500"} font-semibold`}
+            >
               {response}
             </p>
           )}
