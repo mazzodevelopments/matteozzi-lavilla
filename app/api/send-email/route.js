@@ -1,12 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-export const config = {
-  api: {
-    bodyParser: false, // Deshabilitar el bodyParser para esta ruta
-  },
-};
-
 export async function POST(req) {
   const formData = await req.formData();
   const nombre = formData.get("nombre");
