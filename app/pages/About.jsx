@@ -49,7 +49,7 @@ export default function About() {
           // data-scroll
         >
           <span className="text-[2.5vw] sm:text-sm uppercase tracking-wider text-gray-600 mb-4 py-1 px-3 border border-gray-600 rounded-xl">
-            ¿Quienes Somos?
+            ¿Quiénes Somos?
           </span>
           <h1 className="text-3xl sm:text-[7.5vw] font-bold leading-tight sm:leading-[1]">
             Sobre Nosotros

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import SectionContainer from "../components/SectionContainter";
+import SectionContainer from "../components/SectionContainer";
 
 export default function Team() {
   useEffect(() => {

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import SectionContainer from "../components/SectionContainter";
+import SectionContainer from "../components/SectionContainer";
 
 const buttonMotionConfig = {
   whileHover: {

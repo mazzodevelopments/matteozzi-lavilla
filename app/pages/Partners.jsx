@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import SectionContainer from "../components/SectionContainter";
+import SectionContainer from "../components/SectionContainer";
 
 const clients = [
   { name: "Aerolineas", src: "/clientes/aerolineas.png" },

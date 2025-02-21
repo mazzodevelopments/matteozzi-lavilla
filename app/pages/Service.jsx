@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { GiCommercialAirplane, GiTruck, GiWorld } from "react-icons/gi";
 import { useLocomotiveScroll } from "react-locomotive-scroll";
-import SectionContainer from "../components/SectionContainter";
+import SectionContainer from "../components/SectionContainer";
 
 export default function Service() {
   const { scroll } = useLocomotiveScroll();
