@@ -117,14 +117,20 @@ export default function Contact() {
       return;
     }
 
-    const formDataToSend = new FormData();
-    Object.entries(formData).forEach(([key, value]) => {
-      formDataToSend.append(key, value);
+    const formDataToSend = JSON.stringify({
+      nombre: formData.nombre,
+      email: formData.email,
+      telefono: formData.telefono,
+      mensaje: formData.mensaje,
     });
 
+
     try {
-      const response = await fetch("/api/send-email", {
+      const response = await fetch("https://matteozzilavillaserver.mazzodevelopments.com/send-email", {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: formDataToSend,
       });
 
