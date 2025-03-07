@@ -57,9 +57,9 @@ export default function About() {
           <p className="text-sm sm:text-[0.9vw] text-gray-600 mt-4 sm:mt-6">
             Somos una empresa integral en el ámbito del comercio internacional,
             ofreciendo servicios de consultoría, despachante de aduanas y agente
-            de transporte. Contamos con una estructura completa y ágil, personal
-            experimentado, tecnología moderna y profundo conocimiento de las
-            relaciones económicas internacionales.
+            de transporte aduanero. Contamos con una estructura completa y ágil,
+            personal experimentado, tecnología moderna y profundo conocimiento
+            de las relaciones económicas internacionales.
           </p>
         </div>
         {/* FOTO */}
