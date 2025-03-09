@@ -31,9 +31,9 @@ export default function Team() {
       data-scroll-section
     >
       <div className="team flex flex-col items-center justify-center lg:px-0 px-6">
-        <div className="relative w-full max-w-5xl mx-auto flex flex-col lg:flex-row items-center  bg-gradient-to-r from-[#93bec7] to-[#46939f] h-screen lg:h-[500px] rounded-3xl">
+        <div className="relative w-full max-w-5xl mx-auto flex flex-col lg:flex-row items-center  bg-gradient-to-r from-[#93bec7] to-[#46939f] h-auto lg:h-[500px] rounded-3xl">
           {/* Featured Member */}
-          <div className="h-1/2 lg:h-full w-full lg:w-2/5 overflow-hidden">
+          <div className="h-auto lg:h-full w-full lg:w-2/5 overflow-hidden">
             <div className="relative flex flex-col w-full h-full rounded-t-3xl lg:rounded-l-2xl overflow-hidden">
               <img
                 src="/member2.png"
@@ -44,7 +44,7 @@ export default function Team() {
           </div>
 
           {/* Quote Section */}
-          <div className="lg:w-3/5 lg:h-full w-full h-1/2 flex rounded-b-3xl lg:rounded-r-3xl justify-center items-center bg-white border-gray-300 border p-10">
+          <div className="lg:w-3/5 lg:h-full w-full h-auto flex rounded-b-3xl lg:rounded-r-3xl lg:rounded-bl-none justify-center items-center bg-white border-gray-300 border p-10">
             <div className="relative mt-10">
               <svg
                 className="absolute -top-10 -left-2 w-16 h-16 text-[#93bec7] opacity-30"
