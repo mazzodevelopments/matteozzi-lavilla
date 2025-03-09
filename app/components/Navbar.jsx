@@ -1,19 +1,18 @@
-'use client';
-import Image from 'next/image';
-import { useState, useEffect } from 'react';
-import { useLocomotiveScroll } from 'react-locomotive-scroll';
-import LogoSvg from './LogoSvg';
+"use client";
+import Image from "next/image";
+import { useState, useEffect } from "react";
+import { useLocomotiveScroll } from "react-locomotive-scroll";
+import LogoSvg from "./LogoSvg";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scroll } = useLocomotiveScroll();
 
   const menuItems = [
-    { name: 'Inicio', href: 'hero' },
-    { name: 'Nosotros', href: 'about' },
-    { name: 'Servicios', href: 'services' },
-    { name: 'Equipo', href: 'team' },
-    { name: 'Clientes', href: 'clients' }
+    { name: "Inicio", href: "hero" },
+    { name: "Nosotros", href: "about" },
+    { name: "Servicios", href: "services" },
+    { name: "Clientes", href: "clients" },
   ];
 
   const handleScroll = (target) => {
@@ -21,7 +20,7 @@ export default function Navigation() {
       scroll.scrollTo(`#${target}`, {
         offset: 0,
         duration: 1000,
-        easing: [0.25, 0.0, 0.35, 1.0]
+        easing: [0.25, 0.0, 0.35, 1.0],
       });
     }
     setIsMenuOpen(false);
@@ -34,8 +33,8 @@ export default function Navigation() {
       }
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, [isMenuOpen]);
 
   return (
@@ -45,7 +44,7 @@ export default function Navigation() {
           {/* Logo */}
           <div className="flex-shrink-0 flex justify-center items-center">
             <button
-              onClick={() => handleScroll('hero')}
+              onClick={() => handleScroll("hero")}
               className="font-bold text-xl leading-tight text-white cursor-pointer"
             >
               <LogoSvg />
@@ -70,7 +69,7 @@ export default function Navigation() {
           {/* CTA Button */}
           <div className="hidden lg:flex">
             <button
-              onClick={() => handleScroll('contact')}
+              onClick={() => handleScroll("contact")}
               className="hover:bg-gray-100 text-white hover:text-black flex items-center font-medium py-1.5 px-4 rounded-xl transition-colors duration-200 text-[0.9vw] cursor-pointer"
             >
               <div className="mr-2 w-2 h-2 rounded-full bg-cyan-400"></div>
@@ -123,7 +122,7 @@ export default function Navigation() {
       </div>
 
       {/* Mobile menu */}
-      <div className={`${isMenuOpen ? 'block' : 'hidden'} lg:hidden mt-2`}>
+      <div className={`${isMenuOpen ? "block" : "hidden"} lg:hidden mt-2`}>
         <div className="w-[90%] mx-auto rounded-xl glass overflow-hidden shadow-lg">
           {menuItems.map((item) => (
             <button
@@ -136,7 +135,7 @@ export default function Navigation() {
           ))}
           <div className="px-4 py-3 w-full">
             <button
-              onClick={() => handleScroll('contact')}
+              onClick={() => handleScroll("contact")}
               className="bg-gray-200 hover:bg-cyan-300 text-black font-medium py-2 px-4 rounded-lg transition-colors duration-200 text-sm cursor-pointer w-full block text-center"
             >
               Contáctanos
