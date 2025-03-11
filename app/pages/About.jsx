@@ -6,7 +6,7 @@ export default function About() {
     {
       title: "Estructura",
       description:
-        "Ofrecemos una ubicación privilegiada en el corazón de San Carlos de Bariloche para nuestra oficina matriz. Contamos con una amplia red de servicios nacionales e internacionales y colaboramos con embarcadores para garantizar una cobertura completa.",
+        "Ofrecemos una ubicación privilegiada en el corazón de San Carlos de Bariloche para nuestra oficina matriz. Contamos con una amplia red de servicios nacionales e internacionales y colaboramos con embarcadores para garantizar una cobertura completa. Conformado por un staff de profesionales comprometidos con la innovación y con el compromiso de brindar el mejor servicio al cliente.",
     },
     {
       title: "Soporte Informático",
