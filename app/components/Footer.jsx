@@ -86,9 +86,10 @@ export default function Footer() {
                   href="https://maps.google.com/?q=Mitre 125, San Carlos de Bariloche"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-base sm:text-lg cursor-pointer hover:underline"
+                  className="text-base sm:text-lg cursor-pointer hover:underline lg:w-[70%]"
                 >
-                  Mitre 125, San Carlos de Bariloche
+                  Mitre 125, 1er Piso, Oficinas 124-125-126, San Carlos de
+                  Bariloche
                 </a>
               </li>
             </ul>
