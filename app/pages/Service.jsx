@@ -54,13 +54,9 @@ export default function Service() {
         </p>
       </div>
       <div className="flex flex-col items-center justify-center mt-6 lg:mt-10">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-[100%] lg:w-[95%]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-[100%] lg:w-[100%]">
           {/* CARD1 */}
-          <div
-            className="service flex flex-col h-[400px] lg:h-[30vw] border border-gray-300 rounded-2xl py-8 px-6 hover:shadow-lg justify-between"
-            // data-scroll
-            // data-scroll-speed="0.6"
-          >
+          <div className="service flex flex-col h-[400px] lg:h-[30vw] border border-gray-300 rounded-2xl py-8 px-6 hover:shadow-lg justify-between">
             <div>
               <div className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center mb-4">
                 <GiCommercialAirplane
@@ -68,7 +64,7 @@ export default function Service() {
                   aria-hidden="true"
                 />
               </div>
-              <h3 className="lg:text-[1.65vw] sm:text-2xl font-bold leading-tight sm:leading-[1]">
+              <h3 className="lg:text-[1.60vw] sm:text-2xl font-bold leading-tight sm:leading-[1]">
                 Despachante de Aduana
               </h3>
               <p className="text-sm lg:text-[0.95vw] text-gray-600 flex-grow mt-2">
@@ -86,20 +82,17 @@ export default function Service() {
               Consultar →
             </button>
           </div>
+
           {/* CARD2 */}
-          <div
-            className="service flex flex-col h-[400px] lg:h-[30vw] border border-gray-300 rounded-2xl py-8 px-6 hover:shadow-lg justify-between"
-            // data-scroll
-            // data-scroll-speed="0"
-          >
+          <div className="service flex flex-col h-[400px] lg:h-[30vw] border border-gray-300 rounded-2xl py-8 px-6 hover:shadow-lg justify-between">
             <div>
               <div className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center mb-4">
                 <GiTruck className="text-black text-xl" aria-hidden="true" />
               </div>
-              <h3 className="lg:text-[1.65vw] sm:text-2xl font-bold leading-tight sm:leading-[1]">
+              <h3 className="lg:text-[1.60vw] sm:text-2xl font-bold leading-tight sm:leading-[1]">
                 Transporte Aduanero
               </h3>
-              <p className="text-sm lg:text-[0.95vw] text-gray-600 flex-grow mt-2">
+              <p className="text-sm lg:text-[0.90vw] text-gray-600 flex-grow mt-2">
                 Ofrecemos servicios de Agente de Transporte Aduanero para los
                 medios de transporte aéreo, terrestre y marítimo, así como
                 multimodal. Gestionamos tránsitos, reembarcos, transbordos,
@@ -115,20 +108,17 @@ export default function Service() {
               Consultar →
             </button>
           </div>
+
           {/* CARD3 */}
-          <div
-            className="service flex flex-col h-[400px] lg:h-[30vw] border border-gray-300 rounded-2xl py-8 px-6  hover:shadow-lg justify-between"
-            // data-scroll
-            // data-scroll-speed="-0.6"
-          >
+          <div className="service flex flex-col h-[400px] lg:h-[30vw] border border-gray-300 rounded-2xl py-8 px-6 hover:shadow-lg justify-between">
             <div>
               <div className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center mb-4">
                 <GiWorld className="text-black text-xl" aria-hidden="true" />
               </div>
-              <h3 className="lg:text-[1.65vw] sm:text-2xl font-bold leading-tight sm:leading-[1]">
+              <h3 className="lg:text-[1.60vw] sm:text-2xl font-bold leading-tight sm:leading-[1]">
                 Asesoría Integral
               </h3>
-              <p className="text-sm lg:text-[0.95vw] text-gray-600 flex-grow mt-2">
+              <p className="text-sm lg:text-[0.90vw] text-gray-600 flex-grow mt-2">
                 Ofrecemos asesoría integral en comercio internacional, abarcando
                 análisis de costos, documentación, clasificación arancelaria,
                 medios de pago y asesoría legal aduanera. También gestionamos
